@@ -6,10 +6,14 @@
  */
 public class Elfo
 {
-    // VTESTESTETSTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+    // YYY
+    //PPPPP
+    //ALTERAÇÃO EFETUADA
+    
     
     private String nome;
     private int flechas, experiencia;
+    private int hpOrc;
 
     // type initializer
     {
@@ -42,6 +46,15 @@ public class Elfo
         experiencia++;
     }
     
+    //metodo que atira flechas no orc
+    public void atirarFlechaOrc(Orcs orc){
+        
+        hpOrc= orc.recebeDano();
+        flechas--;
+        if(hpOrc<=0){
+            experiencia=experiencia+10;
+        }
+    }
    
     
     /*public void setFlechas(int novaQtdFlechas) {
