@@ -6,7 +6,7 @@
  */
 public class Elfo
 {
-    // Versão correção do tema!!
+    // VTESTESTETSTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
     
     private String nome;
     private int flechas, experiencia;
@@ -22,15 +22,15 @@ public class Elfo
      * @param umNome Nome que o elfo receberá
      * @param flechas Quantidade inicial de flechas
      */
-    public Elfo(String umNome, int flechas)
+    public Elfo(int flechas)
     {
-        this(umNome);
-        // this.nome = nome;
+        
+        this.nome = "Legolas";
         this.flechas = flechas;
     }
     
-    public Elfo(String nome) {
-        this.nome = nome;
+    public Elfo() {
+        this.nome = "LEGOLAS";
     }
     
     /**
@@ -42,9 +42,7 @@ public class Elfo
         experiencia++;
     }
     
-    public void setNome(String novoNome) {
-        nome = novoNome;
-    }
+   
     
     /*public void setFlechas(int novaQtdFlechas) {
         if (novaQtdFlechas > flechas) {
