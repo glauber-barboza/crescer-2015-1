@@ -51,24 +51,21 @@ public class Elfo
         
         hpOrc= orc.recebeDano();
         flechas--;
+       
         if(hpOrc<=0){
             experiencia=experiencia+10;
         }
     }
+    
+    //Testes
    
+       public int quantidadeFlechas(){
+        
+           return flechas;
+       
+    }
     
-    /*public void setFlechas(int novaQtdFlechas) {
-        if (novaQtdFlechas > flechas) {
-            flechas = novaQtdFlechas;
-        }
-    }*/
-    
-    // camelCase: public void atirarFlechaDourada
-    // PascalCase: public void AtirarFlechaDourada
-    
-    
-    
-    
+  
     
     
 }

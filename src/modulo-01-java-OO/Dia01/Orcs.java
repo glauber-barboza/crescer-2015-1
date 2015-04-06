@@ -33,4 +33,8 @@ public class Orcs
      hp = hp-10;   
      return hp;
     }
+    public int getVida(){
+        return hp;
+    }
+    
 }
