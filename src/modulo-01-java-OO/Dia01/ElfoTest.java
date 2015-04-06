@@ -31,7 +31,30 @@ public class ElfoTest
             //Act - Execução da ação de testes
             //Assert - Verifica se o resultado é o esperado
             
+        }
+    @Test
+        public void elfoTemNome(){
+            //Arrange - Montagem dos dados de testes
+            Elfo umElfo=new Elfo();
+            int esperado=42;
+            int resultadoObtido = umElfo.quantidadeFlechas();
+            
+            assertEquals(resultadoObtido, esperado);
+            //Act - Execução da ação de testes
+            //Assert - Verifica se o resultado é o esperado
             
         }
-
+     @Test
+        public void verificaNome(){
+            //Arrange - Montagem dos dados de testes
+            Elfo umElfo=new Elfo();
+            String esperado="";
+            String resultadoObtido = umElfo.retornaNome();
+            
+            assertEquals(resultadoObtido, esperado);
+            //Act - Execução da ação de testes
+            //Assert - Verifica se o resultado é o esperado
+            
+            
+    }
 }

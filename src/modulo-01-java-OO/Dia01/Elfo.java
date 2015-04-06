@@ -65,7 +65,11 @@ public class Elfo
        
     }
     
-  
+     public String retornaNome(){
+        
+           return nome;
+       
+    }
     
     
 }

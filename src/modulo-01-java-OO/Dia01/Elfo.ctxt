@@ -11,4 +11,6 @@ comment3.params=orc
 comment3.target=void\ atirarFlechaOrc(Orcs)
 comment4.params=
 comment4.target=int\ quantidadeFlechas()
-numComments=5
+comment5.params=
+comment5.target=java.lang.String\ retornaNome()
+numComments=6
