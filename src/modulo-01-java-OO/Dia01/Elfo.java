@@ -47,7 +47,7 @@ public class Elfo
     }
     
     //metodo que atira flechas no orc
-    public void atirarFlechaOrc(Orcs orc){
+    public void atirarFlechaOrc(Orc orc){
         
         hpOrc= orc.recebeDano();
         experiencia++;

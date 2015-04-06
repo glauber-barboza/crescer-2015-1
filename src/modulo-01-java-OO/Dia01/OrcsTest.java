@@ -22,7 +22,7 @@ public class OrcsTest
             @Test
         public void orcNascecomVida(){
             //Arrange - Montagem dos dados de testes
-            Orcs umOrc=new Orcs();
+            Orc umOrc=new Orc();
             int esperado=110;
             int resultadoObtido = umOrc.getVida();
             
@@ -35,7 +35,7 @@ public class OrcsTest
          @Test
         public void orcRecebeUmAtack(){
             //Arrange - Montagem dos dados de testes
-            Orcs umOrc=new Orcs();
+            Orc umOrc=new Orc();
             int esperado=100;
             int resultadoObtido = umOrc.recebeDano();
             
@@ -50,7 +50,7 @@ public class OrcsTest
         @Test
         public void orcRecebeDoisAtack(){
             //Arrange - Montagem dos dados de testes
-            Orcs umOrc=new Orcs();
+            Orc umOrc=new Orc();
             int esperado=90;
             int resultadoObtido;
             resultadoObtido= umOrc.recebeDano();
@@ -64,7 +64,7 @@ public class OrcsTest
         @Test
         public void orcRecebeCincoAtack(){
             //Arrange - Montagem dos dados de testes
-            Orcs umOrc=new Orcs();
+            Orc umOrc=new Orc();
             int esperado=60;
             int resultadoObtido;
             resultadoObtido= umOrc.recebeDano();
