@@ -34,13 +34,15 @@ public class Elfo
     }
     
     public Elfo() {
-        this.nome = "LEGOLAS";
+        this.nome = "Legolas";
     }
     
     /**
      * Atira uma flecha e perde uma unidade.
+     * 
+     * @param umOrc Orc que receberá uma flechada.
      */
-    public void atirarFlecha() {
+    public void atirarFlecha(Orc umOrc) {
         //flechas = flechas - 1;
         flechas--;
         experiencia++;
@@ -51,21 +53,21 @@ public class Elfo
         
         hpOrc= orc.recebeDano();
         flechas--;
-       
-        if(hpOrc<=0){
-            experiencia=experiencia+10;
+    
+}
+public void setFlechas(int novaQtdFlechas) {
+        if (novaQtdFlechas > flechas) {
+            flechas = novaQtdFlechas;
         }
     }
     
-    //Testes
-   
-       public int quantidadeFlechas(){
+  //Testes
+public int quantidadeFlechas(){
         
            return flechas;
        
-    }
-    
-     public String retornaNome(){
+}
+public String retornaNome(){
         
            return nome;
        

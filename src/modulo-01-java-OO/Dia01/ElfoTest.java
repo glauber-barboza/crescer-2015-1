@@ -48,7 +48,7 @@ public class ElfoTest
         public void verificaNome(){
             //Arrange - Montagem dos dados de testes
             Elfo umElfo=new Elfo();
-            String esperado="";
+            String esperado="Legolas";
             String resultadoObtido = umElfo.retornaNome();
             
             assertEquals(resultadoObtido, esperado);
