@@ -30,9 +30,14 @@ public class Orc
         return hp;
     }
     
+    
+    /**
+     * Imprime a vida atual da vida orc 
+     * Ex:"Vida atual:110"
+     */
     public String toString(){
         
-        return "";
+        return "Vida atual: "+ this.hp;
     
     }
 }
