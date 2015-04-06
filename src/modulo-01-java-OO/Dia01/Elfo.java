@@ -6,8 +6,6 @@
  */
 public class Elfo
 {
-    // YYY
-    //PPPPP
     //ALTERAÇÃO EFETUADA
     
     
@@ -52,6 +50,7 @@ public class Elfo
     public void atirarFlechaOrc(Orcs orc){
         
         hpOrc= orc.recebeDano();
+        experiencia++;
         flechas--;
     
 }
@@ -62,7 +61,7 @@ public void setFlechas(int novaQtdFlechas) {
     }
     
   //Testes
-public int quantidadeFlechas(){
+public int getFlechas(){
         
            return flechas;
        
@@ -72,6 +71,10 @@ public String retornaNome(){
            return nome;
        
     }
-    
+  public int getExperiencia(){
+        
+           return experiencia;
+       
+}  
     
 }
