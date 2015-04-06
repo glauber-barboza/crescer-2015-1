@@ -25,7 +25,7 @@ public class ElfoTest
             //Arrange - Montagem dos dados de testes
             Elfo umElfo=new Elfo();
             int esperado=42;
-            int resultadoObtido = umElfo.quantidadeFlechas();
+            int resultadoObtido = umElfo.getFlechas();
             
             assertEquals(resultadoObtido, esperado);
             //Act - Execução da ação de testes
@@ -37,7 +37,7 @@ public class ElfoTest
             //Arrange - Montagem dos dados de testes
             Elfo umElfo=new Elfo();
             int esperado=42;
-            int resultadoObtido = umElfo.quantidadeFlechas();
+            int resultadoObtido = umElfo.getFlechas();
             
             assertEquals(resultadoObtido, esperado);
             //Act - Execução da ação de testes
@@ -56,5 +56,32 @@ public class ElfoTest
             //Assert - Verifica se o resultado é o esperado
             
             
+    }
+    @Test
+    public void elfoAtiraFlechaEmUmOrc(){
+        Elfo elfo=new Elfo();
+        
+        Orc orc=new Orc();
+       elfo.atirarFlecha(orc);
+       
+       int experienciaEsperada=1;
+       int flechasEsperadas=41;
+       assertEquals(experienciaEsperada, elfo.getExperiencia());
+       assertEquals(flechasEsperadas, elfo.getFlechas());
+
+    }
+     @Test
+    public void elfoAtiraDuasFlechaEmUmOrc(){
+        Elfo elfo=new Elfo();
+        int experienciaEsperada=2;
+       int flechasEsperadas=40;
+        Orc orc=new Orc();
+       elfo.atirarFlecha(orc);
+       elfo.atirarFlecha(orc);
+       
+       
+       assertEquals(experienciaEsperada, elfo.getExperiencia());
+       assertEquals(flechasEsperadas, elfo.getFlechas());
+
     }
 }
