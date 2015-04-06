@@ -79,7 +79,7 @@ public String retornaNome(){
 
 public String toString(){
     
-    return this.nome+" Possui "+this.flechas+" e "+this.experiencia+" níveis de experiência";
+    return this.nome+" Possui "+this.flechas+" flechas e "+this.experiencia+" níveis de experiência";
     
 }
 }
