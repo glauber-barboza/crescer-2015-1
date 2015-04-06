@@ -76,5 +76,10 @@ public String retornaNome(){
            return experiencia;
        
 }  
+
+public String toString(){
     
+    return this.nome+" Possui "+this.flechas+" e "+this.experiencia+" níveis de experiência";
+    
+}
 }
