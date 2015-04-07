@@ -23,16 +23,16 @@ public class TestesIntegrados
     public void umElfoAtiraEmDoisOrcs() {
         // Arrange
         Elfo elfo = new Elfo();
-        Orc orc1 = new Orc();
-        Orc orc2 = new Orc();
+        Orc orc1 = new Orc("Bazinga");
+        Orc orc2 = new Orc("Bazinga2");
         // Act
-        elfo.atirarFlecha(orc1);
-        elfo.atirarFlecha(orc2);
+         elfo.atirarFlechaOrc(orc1);
+          elfo.atirarFlechaOrc(orc2);
         // Assert
         int experienciaEsperada = 2;
         int flechasEsperadas = 40;
-        int vidaEsperadaOrc1 = 110;
-        int vidaEsperadaOrc2 = 110;
+        int vidaEsperadaOrc1 = 100;
+        int vidaEsperadaOrc2 = 100;
         
         assertEquals(experienciaEsperada, elfo.getExperiencia());
         assertEquals(flechasEsperadas, elfo.getFlechas());
