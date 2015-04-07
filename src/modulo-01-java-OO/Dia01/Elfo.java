@@ -11,7 +11,6 @@ public class Elfo
     
     private String nome;
     private int flechas, experiencia;
-    private int hpOrc;
 
     // type initializer
     {
@@ -34,25 +33,19 @@ public class Elfo
     public Elfo() {
         this.nome = "Legolas";
     }
+
     
-    /**
+   /**
      * Atira uma flecha e perde uma unidade.
      * 
      * @param umOrc Orc que receberá uma flechada.
      */
-    public void atirarFlecha(Orc umOrc) {
-        //flechas = flechas - 1;
-        flechas--;
-        experiencia++;
-    }
-    
-    //metodo que atira flechas no orc
     public void atirarFlechaOrc(Orc orc){
-        
-        hpOrc= orc.recebeDano();
+        if(flechas >=0){
+        orc.recebeDano();
         experiencia++;
         flechas--;
-    
+     }
 }
 public void setFlechas(int novaQtdFlechas) {
         if (novaQtdFlechas > flechas) {
@@ -78,8 +71,40 @@ public String retornaNome(){
 }  
 
 public String toString(){
+    StringBuilder builder=new StringBuilder();
+    builder.append(
+       String.format("%s possui %d %s e %d %s de experiência.",
+       this.nome,
+       this.flechas,
+       this.flechas == 1 ? "flecha" : "flechas",
+       this.experiencia,
+       this.flechas == 1 ? "níveil" : "níveis"  //metodo chamado de ternário??
+       ));//melhor prática a ser utilizada 
     
-    return this.nome+" Possui "+this.flechas+" flechas e "+this.experiencia+" níveis de experiência";
+    
+    /*
+    StringBuilder builder=new StringBuilder();
+    builder.append(this.nome);
+    builder.append(" Possui ");
+    builder.append(this.flechas);
+    builder.append(" ");
+    builder.append(textoFlechas);
+    builder.append(" e ");
+    builder.append(this.experiencia);
+    builder.append(" ");
+    builder.append(textoExperiencia);
+    builder.append(" de experiência");
+    
+    //return builder.toString();
+    //metodo com boa pratica
+   
+    */
+    return builder.toString();
+  
+    
+    //return this.nome+" Possui "+this.flechas+" "+ textoFlechas+" e "+this.experiencia+" "+textoExperiencia+" de experiência";//metodo que funciona
+    
+    
     
 }
 }
