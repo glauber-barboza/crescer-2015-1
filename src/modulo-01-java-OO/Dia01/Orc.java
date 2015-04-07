@@ -28,7 +28,10 @@ public class Orc
         
       
     }
-   //orc recebe 10 de dano
+  
+    /**
+     * De acordo com os parametros do gerarNumero ele recebera um dano
+     */
     public void recebeDano(){
     
         double numeroRecebido= gerarNumero();
@@ -42,6 +45,10 @@ public class Orc
         }
         
     }
+    
+    /**
+     * Metodo utilizado para retornar a vida atual do orc
+     */
     public int getVida(){
         return hp;
     }
@@ -58,6 +65,9 @@ public class Orc
     }
     
     
+    /**
+     * Exercicio loco do professor
+     */
     private double gerarNumero(){
         double numero=0.0;
         boolean possuiNimeComMaisDe5Caracteres= this.nome != null && this.nome.length() > 5;
@@ -92,17 +102,31 @@ public class Orc
         }
         return numero;
     }
+    
+    /**
+     * Metodo utilizado para adicionar um status ao orc
+     * ex:Vivo,Morto,Dormindo
+     */
        public void setStatus(Status statusRecebido){
            
         this.status=statusRecebido;
         
     }
+    
      public String getNome(){
         return nome;
     }
+    
+    /**
+     * Metodo utilizado para retornar a experiencia atual do orc
+     */
      public int getExperiencia(){
         return xp;
     }
+    
+    /**
+     * Metodo utilizado para adicionar 1 de experiencia ao orc
+     */
     public void set1Xp(){
     xp+=1;
     }
