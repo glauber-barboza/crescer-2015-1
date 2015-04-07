@@ -13,6 +13,7 @@ public class Orc
     private int hp;
     private int xp;
     private Status status;
+    private ItemDoInvetario item;
 
     /**
      * Constructor for objects of class Orcs
