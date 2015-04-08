@@ -243,6 +243,29 @@ public class OrcTest
             assertEquals(itemDoOrc5,umOrc.getItemForIncice(4));
         
     }
+    @Test
+    public void getDescricoesComUmItem(){
+        Orc umOrc=new Orc("Tonico");
+         ItemDoInvetario item1=new ItemDoInvetario("faca de pão", 1);
+         umOrc.adicionarItem(item1);
+         String getDescricoes=umOrc.getDescricaoesItens();
+          String descricaoEsperada="faca de pão";
+            assertEquals(descricaoEsperada,getDescricoes);
+         
+    }
+    @Test
+    public void getDescricoesComTrezItem(){
+        Orc umOrc=new Orc("Tonico");
+         ItemDoInvetario item1=new ItemDoInvetario("faca de pão", 1);
+         ItemDoInvetario item2=new ItemDoInvetario("faca", 1);
+         ItemDoInvetario item3=new ItemDoInvetario("batata", 1);
+         umOrc.adicionarItem(item1);umOrc.adicionarItem(item2);umOrc.adicionarItem(item3);
+         
+         String getDescricoes=umOrc.getDescricaoesItens();
+          String descricaoEsperada="faca de pão,faca,batata";
+            assertEquals(descricaoEsperada,getDescricoes);
+         
+        }
     
 }
 
