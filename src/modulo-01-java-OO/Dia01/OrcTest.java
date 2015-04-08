@@ -205,6 +205,45 @@ public class OrcTest
     assertEquals(vidaEsperada, umOrc.getVida());
     assertEquals(xpEsperada, umOrc.getExperiencia());
     }
+    @Test
+    public void orcRecebeUmItem(){
+        Orc umOrc=new Orc("Tom Bombardeiro");
+        ItemDoInvetario item=new ItemDoInvetario("faca de pão", 1);
+        umOrc.adicionarItem(item);
+        Object itemDoOrc= item;
+        
+        assertEquals(itemDoOrc,umOrc.getItemForIncice(0));
+        
+    }
+     @Test
+    public void orcRecebeCincoItems(){
+        Orc umOrc=new Orc("Tom Bombardeiro");
+        ItemDoInvetario item1=new ItemDoInvetario("faca de pão", 1);
+        ItemDoInvetario item2=new ItemDoInvetario("batata", 1);
+        ItemDoInvetario item3=new ItemDoInvetario("carne", 1);
+        ItemDoInvetario item4=new ItemDoInvetario("pedras", 1);
+        ItemDoInvetario item5=new ItemDoInvetario("funda", 1);
+        
+        umOrc.adicionarItem(item1);
+        umOrc.adicionarItem(item2);
+        umOrc.adicionarItem(item3);
+        umOrc.adicionarItem(item4);
+        umOrc.adicionarItem(item5);
+        Object itemDoOrc1= item1;
+        Object itemDoOrc2= item2;
+        Object itemDoOrc3= item3;
+        Object itemDoOrc4= item4;
+        Object itemDoOrc5= item5;
+        
+        
+        assertEquals(itemDoOrc1,umOrc.getItemForIncice(0));
+         assertEquals(itemDoOrc2,umOrc.getItemForIncice(1));
+          assertEquals(itemDoOrc3,umOrc.getItemForIncice(2));
+           assertEquals(itemDoOrc4,umOrc.getItemForIncice(3));
+            assertEquals(itemDoOrc5,umOrc.getItemForIncice(4));
+        
+    }
+    
 }
 
 

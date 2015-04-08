@@ -1,4 +1,4 @@
-
+import java.util.ArrayList;
 /**
  * Write a description of class Orcs here.
  * 
@@ -14,6 +14,7 @@ public class Orc
     private int xp;
     private Status status;
     private ItemDoInvetario item;
+    ArrayList<Object> itemDoInventario=new ArrayList<Object>();
 
     /**
      * Constructor for objects of class Orcs
@@ -131,4 +132,25 @@ public class Orc
     public void set1Xp(){
     xp+=1;
     }
+    
+    public void adicionarItem(ItemDoInvetario itemInvetario ){
+        
+    itemDoInventario.add(itemInvetario);
+    
+    }
+     public void perderItem(ItemDoInvetario itemInvetario ){
+        
+    itemDoInventario.remove(itemInvetario);
+    
+    }
+    
+    public Object getItemForIncice(int indiceItem ){
+        
+    return itemDoInventario.get(indiceItem);
+    
+    } 
+    
+    
+    
+    
 }
