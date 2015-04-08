@@ -13,6 +13,10 @@ import org.junit.Test;
  */
 public class OrcTest
 {
+ /**
+ * Verifica se o orc ao nascer recebe 110 de vida
+ *
+ */
     @Test
     public void orcNasceCom110Vida() {
         // Arrange - Montagem dos dados de teste
@@ -26,6 +30,11 @@ public class OrcTest
         assertEquals(esperado, resultadoObtido);
     }
     
+ /**
+ * Verifica se o orc ao receber 1 atack perde vida
+ * obs: 1 atack de 10 de dano, retirando 10 de vida, orc que nasce com 110 de vida deve ficar com 100 de vida
+ *
+ */
     @Test
     public void orcRecebeAtaqueUmaVez() {
         // Arrange - Montagem dos dados de teste
@@ -39,7 +48,11 @@ public class OrcTest
         assertEquals(esperado, resultadoObtido);
     }
     
-    @Test
+ /**
+ * Verifica se o orc ao receber 2 atack perde vida
+ * obs: 1 atack de 10 de dano, retirando 10 de vida, orc que nasce com 110 de vida deve ficar com 90 de vida
+ */
+ @Test
     public void orcRecebeAtaqueDuasVezes() {
         // Arrange - Montagem dos dados de teste
         Orc umOrc = new Orc("Bazinga");
@@ -53,7 +66,11 @@ public class OrcTest
         assertEquals(esperado, resultadoObtido);
     }
     
-    @Test
+ /**
+ * Verifica se o orc ao receber 5 atack perde vida
+ * obs: 1 atack de 10 de dano, retirando 10 de vida, orc que nasce com 110 de vida deve ficar com 60 de vida
+ */
+ @Test
     public void orcRecebeAtaqueCincoVezes() {
         // Arrange - Montagem dos dados de teste
         Orc umOrc = new Orc("Bazinga");
@@ -69,8 +86,12 @@ public class OrcTest
         
         assertEquals(esperado, resultadoObtido);
     }
-    
-    @Test
+ 
+ /**
+ * Verifica se o orc ao receber 10 atack perde vida
+ * obs: 1 atack de 10 de dano, retirando 10 de vida, orc que nasce com 110 de vida deve ficar com -10 de vida
+ */
+ @Test
     public void orcRecebeAtaqueDozeVezes() {
         // Arrange - Montagem dos dados de teste
         Orc umOrc = new Orc("Bazinga");
@@ -94,7 +115,12 @@ public class OrcTest
         
         assertEquals(esperado, resultadoObtido);
     }
-          @Test
+ 
+ /**
+ * Verifica se o orc ao receber 5 atack perde vida
+ * obs: 1 atack de 10 de dano, retirando 10 de vida, orc que nasce com 110 de vida deve ficar com 60 de vida
+ */   
+ @Test
         public void orcNascecomVida(){
             //Arrange - Montagem dos dados de testes
             Orc umOrc=new Orc("Bazinga");
@@ -106,57 +132,13 @@ public class OrcTest
             //Assert - Verifica se o resultado é o esperado
             
             
-    }
-         @Test
-        public void orcRecebeUmAtack(){
-            //Arrange - Montagem dos dados de testes
-            Orc umOrc=new Orc("Bazinga");
-            int esperado=100;
-            umOrc.recebeDano();
-            int resultadoObtido=umOrc.getVida();
-            assertEquals(resultadoObtido, esperado);
-            //Act - Execução da ação de testes
-            //Assert - Verifica se o resultado é o esperado
-            
-            
-    }
-    
-    //teste no orck ele recebe 2 atack
-        @Test
-        public void orcRecebeDoisAtack(){
-            //Arrange - Montagem dos dados de testes
-            Orc umOrc=new Orc("Bazinga");
-            int esperado=90;
-            int resultadoObtido;
-            umOrc.recebeDano();
-            umOrc.recebeDano();
-            resultadoObtido= umOrc.getVida();
-            assertEquals(resultadoObtido, esperado);
-            //Act - Execução da ação de testes
-            //Assert - Verifica se o resultado é o esperado
-            
-    }
-    //teste no orck ele recebe 5 atack
-        @Test
-        public void orcRecebeCincoAtack(){
-            //Arrange - Montagem dos dados de testes
-            Orc umOrc=new Orc("Bazinga");
-            int esperado=60;
-            int resultadoObtido;
-            umOrc.recebeDano();
-            umOrc.recebeDano();
-            umOrc.recebeDano();
-            umOrc.recebeDano();
-            umOrc.recebeDano();
-            resultadoObtido= umOrc.getVida();
-            assertEquals(resultadoObtido, esperado);
-            //Act - Execução da ação de testes
-            //Assert - Verifica se o resultado é o esperado
-            
-            
-    }
-    
-    @Test
+        }
+
+ /**
+ * Verifica se o orc ao receber 5 atack perde vida
+ * obs: 1 atack de 10 de dano, retirando 10 de vida, orc que nasce com 110 de vida deve ficar com 60 de vida
+ */
+ @Test
     public void orcToStringRetornaVidaPadrao(){
     Orc orc=new Orc("Bazinga");
     
@@ -164,7 +146,13 @@ public class OrcTest
     String esperado= "Vida atual: 110";
     assertEquals(resultadoObtido, esperado);
     }
-      @Test
+ 
+    
+ /**
+ * Verifica se o orc ao receber 5 atack perde vida
+ * obs: 1 atack de 10 de dano, retirando 10 de vida, orc que nasce com 110 de vida deve ficar com 60 de vida
+ */
+ @Test
     public void orcToStringRetornaVidaAposAtack(){
     Orc orc=new Orc("Bazinga");
     orc.recebeDano();
@@ -172,8 +160,8 @@ public class OrcTest
     String esperado= "Vida atual: 100";
     assertEquals(resultadoObtido, esperado);
     }
-    @Test
-    public void orcRecebeAtacComNumeroGeradoMenorQueZero(){
+ @Test
+ public void orcRecebeAtacComNumeroGeradoMenorQueZero(){
     Orc umOrc=new Orc("Tom");
     umOrc.recebeDano();
     int vidaEsperada=100;
@@ -182,7 +170,8 @@ public class OrcTest
     assertEquals(vidaEsperada, umOrc.getVida());
     assertEquals(xpEsperada, umOrc.getExperiencia());
     }
-      @Test
+    
+ @Test
     public void orcRecebeAtacComNumeroEntre0e100(){
     Orc umOrc=new Orc("Tom Bombardeiro");
     umOrc.recebeDano();
