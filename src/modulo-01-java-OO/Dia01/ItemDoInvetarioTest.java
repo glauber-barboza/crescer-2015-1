@@ -23,8 +23,7 @@ public class ItemDoInvetarioTest
       @Test
     public void recebeItens(){
         
-        ItemDoInvetario item=new ItemDoInvetario();
-        item.recebeItem("Arco", 1);
+        ItemDoInvetario item=new ItemDoInvetario("Arco", 1);
         String itemEsperado= "Arco";
         int quantidadeEsperada=1;
         
