@@ -27,4 +27,8 @@ public class ItemDoInvetario
     
         return quantidade;
     }
+    public void setQuantidade(int quantidade){
+    
+        this.quantidade+=quantidade;
+    }
 }

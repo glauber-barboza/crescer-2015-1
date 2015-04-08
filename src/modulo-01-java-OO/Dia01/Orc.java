@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Random;
+
 /**
  * Write a description of class Orcs here.
  * 
@@ -14,7 +16,7 @@ public class Orc
     private int xp;
     private Status status;
     private ItemDoInvetario item;
-    ArrayList<ItemDoInvetario> itemDoInventario=new ArrayList<ItemDoInvetario>();
+    ArrayList<ItemDoInvetario> itemDoOrc=new ArrayList<ItemDoInvetario>();
 
     /**
      * Constructor for objects of class Orcs
@@ -135,22 +137,57 @@ public class Orc
     
     public void adicionarItem(ItemDoInvetario itemInvetario ){
         
-    itemDoInventario.add(itemInvetario);
+    itemDoOrc.add(itemInvetario);
     
     }
      public void perderItem(ItemDoInvetario itemInvetario ){
         
-    itemDoInventario.remove(itemInvetario);
+    itemDoOrc.remove(itemInvetario);
     
     }
     
     public Object getItemForIncice(int indiceItem ){
         
-    return itemDoInventario.get(indiceItem);
+    return itemDoOrc.get(indiceItem);
     
     } 
+    public String getDescricaoesItens(){
+        int itensinvetario=itemDoOrc.size();
+        String descricao="";
+    for(int i=0;i < itensinvetario;i++ ){
+        System.out.print(itemDoOrc.get(i).getDescricao());
+        descricao=descricao+itemDoOrc.get(i).getDescricao();
+        if(i != itensinvetario-1){
+        System.out.print(",");
+        descricao=descricao+",";
+        }
+    }
+    return descricao;
+    }
     
+    /**
+     * Caso o item tenha sorte ele recebe 1000 unidade de cada item que possuir no invertário
+     */
+    public void tentaSorte(){
+        int valorSorteado= gerarNumerorandomico();
+        
+        if(valorSorteado==3481){
+            int novaQuantidade= item.getQuantidade()+1000;
+            
+            for(int i=0; i>itemDoOrc.size();i++){
+           // itemDoOrc.set(i, novaQuantidade);
+        }
+        }
+        
+        
+    }
     
-    
-    
-}
+    public int gerarNumerorandomico(){
+        Random random = new Random();
+        int intervalo_randomico = random.nextInt(4000);        
+        System.out.println("O numero gerado foi: "+intervalo_randomico);
+        return intervalo_randomico;
+        
+    }
+    }
+   
