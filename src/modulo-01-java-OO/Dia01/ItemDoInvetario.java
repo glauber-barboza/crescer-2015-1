@@ -13,15 +13,11 @@ public class ItemDoInvetario
     /**
      * Constructor for objects of class itemDoInvetario
      */
-    public ItemDoInvetario()
+    public ItemDoInvetario(String nomeItem, int quantidadeItem)
     {
-    }
-    
-    public void recebeItem(String nomeItem, int quantidadeItem){
-        descricao=nomeItem;
+         descricao=nomeItem;
         quantidade=quantidadeItem;
     }
-    
     public String getDescricao(){
     
         return descricao;
