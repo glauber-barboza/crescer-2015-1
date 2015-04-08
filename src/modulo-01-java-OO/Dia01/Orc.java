@@ -14,7 +14,7 @@ public class Orc
     private int xp;
     private Status status;
     private ItemDoInvetario item;
-    ArrayList<Object> itemDoInventario=new ArrayList<Object>();
+    ArrayList<ItemDoInvetario> itemDoInventario=new ArrayList<ItemDoInvetario>();
 
     /**
      * Constructor for objects of class Orcs
