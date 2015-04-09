@@ -6,8 +6,7 @@
  */
 public class Elfo
 {
-    //ALTERAÇÃO EFETUADA
-    
+    // Versão correção do tema!!
     
     private String nome;
     private int flechas, experiencia;
@@ -23,88 +22,113 @@ public class Elfo
      * @param umNome Nome que o elfo receberá
      * @param flechas Quantidade inicial de flechas
      */
-    public Elfo(int flechas)
+    public Elfo(String umNome, int flechas)
     {
-        
-        this.nome = "Legolas";
+        this(umNome);
+        // this.nome = nome;
         this.flechas = flechas;
     }
     
-    public Elfo() {
-        this.nome = "Legolas";
+    /**
+     * Cria um elfo informando nome.
+     * 
+     * @param nome Nome a ser dado para o Elfo.
+     */
+    public Elfo(String nome) {
+        this.nome = nome;
     }
-
     
-   /**
+    /**
      * Atira uma flecha e perde uma unidade.
      * 
      * @param umOrc Orc que receberá uma flechada.
      */
-    public void atirarFlechaOrc(Orc orc){
-        if(flechas >=0){
-        orc.recebeDano();
-        experiencia++;
+    public void atirarFlecha(Orc umOrc) {
+        //flechas = flechas - 1;
         flechas--;
-     }
-}
-public void setFlechas(int novaQtdFlechas) {
+        experiencia++;
+        umOrc.recebeAtaque();
+    }
+    
+    public String getNome() {
+        return this.nome;
+    }
+    
+    public int getFlechas() {
+        return this.flechas;
+    }
+    
+    public int getExperiencia() {
+        return this.experiencia;
+    }
+    
+    /*public void setFlechas(int novaQtdFlechas) {
         if (novaQtdFlechas > flechas) {
             flechas = novaQtdFlechas;
         }
-    }
+    }*/
     
-  //Testes
-public int getFlechas(){
+    // camelCase: public void atirarFlechaDourada
+    // PascalCase: public void AtirarFlechaDourada
+    
+    /**
+     * Retorna o nome do elfo, sua quantidade de flechas e seus níveis de experiência.
+     * 
+     * @return Informações gerais sobre o elfo, ex:
+     * 
+     * "Legolas possui 42 flechas e 0 níveis de experiência."
+     */
+    public String toString() {
         
-           return flechas;
-       
-}
-public String retornaNome(){
+        /*StringBuilder builder = new StringBuilder();
         
-           return nome;
-       
-    }
-  public int getExperiencia(){
-        
-           return experiencia;
-       
-}  
+        builder.append(
+            String.format("%s possui %d %s e %d %s de experiência.",
+                this.nome,
+                this.flechas,
+                this.flechas == 1 ? "flecha" : "flechas",
+                this.experiencia,
+                this.experiencia == 1 ? "nível" : "níveis"
+            )
+        );
 
-public String toString(){
-    StringBuilder builder=new StringBuilder();
-    builder.append(
-       String.format("%s possui %d %s e %d %s de experiência.",
-       this.nome,
-       this.flechas,
-       this.flechas == 1 ? "flecha" : "flechas",
-       this.experiencia,
-       this.flechas == 1 ? "níveil" : "níveis"  //metodo chamado de ternário??
-       ));//melhor prática a ser utilizada 
+        return builder.toString();
+        
+        */
+        
+        return String.format("%s possui %d %s e %d %s de experiência.",
+                this.nome,
+                this.flechas,
+                this.flechas == 1 ? "flecha" : "flechas",
+                this.experiencia,
+                this.experiencia == 1 ? "nível" : "níveis"
+            );
+       
+        // Ruby ou CoffeeScript:
+        //"#{nome} possui #{flechas} #{textoFlechas} e #{experiencia} #{textoNiveis} de experiência."
+       
+        // C# null-coalsing:
+        // String texto = this.nome ?? "Sem Nome";
+                
+        /*if (this.flechas == 1) {
+            textoFlechas = "flecha";
+        } else {
+            textoFlechas = "flechas";
+        }*/
+        
+        /*builder.append(this.nome);
+        builder.append(" possui ");
+        builder.append(this.flechas);
+        builder.append(" ");
+        builder.append(textoFlechas);
+        builder.append(" e ");
+        builder.append(this.experiencia);
+        builder.append(" ");
+        builder.append(textoNiveis);
+        builder.append(" de experiência.");*/
+    }
     
     
-    /*
-    StringBuilder builder=new StringBuilder();
-    builder.append(this.nome);
-    builder.append(" Possui ");
-    builder.append(this.flechas);
-    builder.append(" ");
-    builder.append(textoFlechas);
-    builder.append(" e ");
-    builder.append(this.experiencia);
-    builder.append(" ");
-    builder.append(textoExperiencia);
-    builder.append(" de experiência");
-    
-    //return builder.toString();
-    //metodo com boa pratica
-   
-    */
-    return builder.toString();
-  
-    
-    //return this.nome+" Possui "+this.flechas+" "+ textoFlechas+" e "+this.experiencia+" "+textoExperiencia+" de experiência";//metodo que funciona
     
     
-    
-}
 }
