@@ -407,9 +407,9 @@ public class OrcTest
         urukhai.adicionarItem(new ItemDoInventario(3, "Poção de mana"));
         urukhai.adicionarItem(new ItemDoInventario(1, "Poção Lança"));
         
-        int valorRecebido = urukhai.getItemComMaiorQuantidade();
+        String valorRecebido = urukhai.getItemComMaiorQuantidade();
     
-        assertEquals(3, valorRecebido);
+        assertEquals("Poção de mana", valorRecebido);
     }
     
     /**
@@ -424,9 +424,9 @@ public class OrcTest
         urukhai.adicionarItem(new ItemDoInventario(1, "adaga"));
         urukhai.adicionarItem(new ItemDoInventario(5, "batatas"));
         
-        int valorRecebido = urukhai.getItemComMaiorQuantidade();
+        String valorRecebido = urukhai.getItemComMaiorQuantidade();
     
-        assertEquals(20, valorRecebido);
+        assertEquals("pão", valorRecebido);
     }
 }
 
