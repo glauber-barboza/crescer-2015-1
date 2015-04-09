@@ -261,18 +261,27 @@ public class Orc
         } else if (this.experiencia > 2) {
             numeroGerado = numeroGerado * numeroGerado;
         }
-                System.out.println("O numero gerado é:"+numeroGerado);
         return numeroGerado;
     }
     
-    public String getItemComMaiorQuantidade(){
-        int itemMaiorQuantidade=0;
-        String itemComMaiorQuantidade="";
-        for(int i=0; i > itens.size();i++){
-           if(itemMaiorQuantidade < itens.get(i).getQuantidade()){
-            itemComMaiorQuantidade = itens.get(i).getDescricao();
-           }
+    public ItemDoInventario getItemComMaiorQuantidade(){
+         ItemDoInventario itemMaiorQuantidade = null;
+        
+        boolean temItens = !this.itens.isEmpty();       
+        if (temItens) {
+            itemMaiorQuantidade = this.itens.get(0);
+            
+            for (int i = 1; i < this.itens.size(); i++) {
+                ItemDoInventario itemAtual = this.itens.get(i);
+                boolean encontreiAMaiorQuantidade =
+                    itemAtual.getQuantidade() > itemMaiorQuantidade.getQuantidade();
+                
+                if (encontreiAMaiorQuantidade) {
+                    // atualizar a minha referência para o maior parcial
+                    itemMaiorQuantidade = itemAtual;
+                }
+            }
         }
-        return itemComMaiorQuantidade;
+        return itemMaiorQuantidade;
     }
 }

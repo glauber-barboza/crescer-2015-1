@@ -169,7 +169,7 @@ public class OrcTest
     public void orcNasceComNomeInformado() {
         // Arrange - Montagem dos dados de teste
         Orc umOrc;
-        String esperado = "Urukhai";	
+        String esperado = "Urukhai";    
         // Act - Execução da ação de testes
         umOrc = new Orc(esperado);
         // Assert - Verificação
@@ -182,7 +182,7 @@ public class OrcTest
     public void orcNasceComNomeVazioInformado() {
         // Arrange - Montagem dos dados de teste
         Orc umOrc;
-        String esperado = "";	
+        String esperado = "";   
         // Act - Execução da ação de testes
         umOrc = new Orc(esperado);
         // Assert - Verificação
@@ -195,7 +195,7 @@ public class OrcTest
     public void orcNasceComNomeNuloInformado() {
         // Arrange - Montagem dos dados de teste
         Orc umOrc;
-        String esperado = null;	
+        String esperado = null; 
         // Act - Execução da ação de testes
         umOrc = new Orc(esperado);
         // Assert - Verificação
@@ -402,31 +402,62 @@ public class OrcTest
      * Teste para verificar o item que o ork mais tem no inventário
      * Comparação 2 itens 
      */
-    public void orcItemComMaiorQuantidade2Itens(){
-         Orc urukhai = new Orc();
-        urukhai.adicionarItem(new ItemDoInventario(3, "Poção de mana"));
-        urukhai.adicionarItem(new ItemDoInventario(1, "Poção Lança"));
-        
-        String valorRecebido = urukhai.getItemComMaiorQuantidade();
     
-        assertEquals("Poção de mana", valorRecebido);
+    @Test
+    public void getMaiorQuantidadeComNenhumItem() {
+        // Arrange
+        Orc orc = new Orc();
+        ItemDoInventario esperado = null;
+        // Act
+        ItemDoInventario resultado = orc.getItemComMaiorQuantidade();
+        // Assert
+        assertEquals(esperado, resultado);
     }
     
-    /**
-     * Teste para verificar o item que o ork mais tem no inventário
-     * Comparação 5 itens 
-     */
-    public void orcItemComMaiorQuantidade5Itens(){
-         Orc urukhai = new Orc();
-        urukhai.adicionarItem(new ItemDoInventario(3, "Poção de mana"));
-        urukhai.adicionarItem(new ItemDoInventario(1, "Poção Lança"));
-        urukhai.adicionarItem(new ItemDoInventario(20, "pão"));
-        urukhai.adicionarItem(new ItemDoInventario(1, "adaga"));
-        urukhai.adicionarItem(new ItemDoInventario(5, "batatas"));
-        
-        String valorRecebido = urukhai.getItemComMaiorQuantidade();
+    @Test
+    public void getMaiorQuantidadeComUmItem() {
+        // Arrange
+        Orc orc = new Orc();
+        ItemDoInventario esperado = new ItemDoInventario(1, "Light Saber");
+        orc.adicionarItem(esperado);
+        // Act
+        ItemDoInventario resultado = orc.getItemComMaiorQuantidade();
+        // Assert
+        assertEquals(esperado, resultado);
+    }
     
-        assertEquals("pão", valorRecebido);
+    @Test
+    public void getMaiorQuantidadeComDoisOuMaisItensComAMesmaQuantidade() {
+        // Arrange
+        Orc orc = new Orc();
+        ItemDoInventario esperado = new ItemDoInventario(0, "Gatorade da Vovó");
+        ItemDoInventario duplicado = new ItemDoInventario(0, "Gatorade da Vovó");
+        orc.adicionarItem(esperado);
+        orc.adicionarItem(duplicado);
+        // Act
+        ItemDoInventario resultado = orc.getItemComMaiorQuantidade();
+        // Assert
+        assertEquals(esperado, resultado);
+    }
+    
+    @Test
+    public void getMaiorQuantidadeComVariosItensComDiferentesQuantidades() {
+        // Arrange
+        Orc orc = new Orc();
+        ItemDoInventario adaga = new ItemDoInventario(15, "Adaga");
+        ItemDoInventario pocao = new ItemDoInventario(2, "Poções");
+        ItemDoInventario flecha = new ItemDoInventario(17, "Poções");
+        ItemDoInventario pedraPreciosa = new ItemDoInventario(9, "Pedras preciosas");
+        ItemDoInventario beyBlade = new ItemDoInventario(18, "BeyBlade");
+        orc.adicionarItem(adaga);
+        orc.adicionarItem(pocao);
+        orc.adicionarItem(flecha);
+        orc.adicionarItem(pedraPreciosa);
+        orc.adicionarItem(beyBlade);
+        // Act
+        ItemDoInventario resultado = orc.getItemComMaiorQuantidade();
+        // Assert
+        assertEquals(beyBlade, resultado);
     }
 }
 
