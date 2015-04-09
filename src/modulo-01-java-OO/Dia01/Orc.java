@@ -265,13 +265,14 @@ public class Orc
         return numeroGerado;
     }
     
-    public int getItemComMaiorQuantidade(){
+    public String getItemComMaiorQuantidade(){
         int itemMaiorQuantidade=0;
-        for(int i=0; i> itens.size();i++){
+        String itemComMaiorQuantidade="";
+        for(int i=0; i > itens.size();i++){
            if(itemMaiorQuantidade < itens.get(i).getQuantidade()){
-            itemMaiorQuantidade = itens.get(i).getQuantidade();
+            itemComMaiorQuantidade = itens.get(i).getDescricao();
            }
         }
-        return itemMaiorQuantidade;
+        return itemComMaiorQuantidade;
     }
 }
