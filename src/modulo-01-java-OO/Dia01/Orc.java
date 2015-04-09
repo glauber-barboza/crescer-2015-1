@@ -264,4 +264,14 @@ public class Orc
                 System.out.println("O numero gerado é:"+numeroGerado);
         return numeroGerado;
     }
+    
+    public int getItemComMaiorQuantidade(){
+        int itemMaiorQuantidade=0;
+        for(int i=0; i> itens.size();i++){
+           if(itemMaiorQuantidade < itens.get(i).getQuantidade()){
+            itemMaiorQuantidade = itens.get(i).getQuantidade();
+           }
+        }
+        return itemMaiorQuantidade;
+    }
 }
