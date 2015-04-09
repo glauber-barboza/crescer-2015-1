@@ -397,6 +397,37 @@ public class OrcTest
         assertEquals(3, pocao.getQuantidade());
         assertEquals(1, lanca.getQuantidade());
     }
+    
+    /**
+     * Teste para verificar o item que o ork mais tem no inventário
+     * Comparação 2 itens 
+     */
+    public void orcItemComMaiorQuantidade2Itens(){
+         Orc urukhai = new Orc();
+        urukhai.adicionarItem(new ItemDoInventario(3, "Poção de mana"));
+        urukhai.adicionarItem(new ItemDoInventario(1, "Poção Lança"));
+        
+        int valorRecebido = urukhai.getItemComMaiorQuantidade();
+    
+        assertEquals(3, valorRecebido);
+    }
+    
+    /**
+     * Teste para verificar o item que o ork mais tem no inventário
+     * Comparação 5 itens 
+     */
+    public void orcItemComMaiorQuantidade5Itens(){
+         Orc urukhai = new Orc();
+        urukhai.adicionarItem(new ItemDoInventario(3, "Poção de mana"));
+        urukhai.adicionarItem(new ItemDoInventario(1, "Poção Lança"));
+        urukhai.adicionarItem(new ItemDoInventario(20, "pão"));
+        urukhai.adicionarItem(new ItemDoInventario(1, "adaga"));
+        urukhai.adicionarItem(new ItemDoInventario(5, "batatas"));
+        
+        int valorRecebido = urukhai.getItemComMaiorQuantidade();
+    
+        assertEquals(20, valorRecebido);
+    }
 }
 
 
