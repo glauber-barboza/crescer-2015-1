@@ -4,16 +4,16 @@
  * 
  * @author CWI Software
  */
-public class Elfo
+public class Elfo extends Personagem
 {
     // Versão correção do tema!!
     
-    private String nome;
-    private int flechas, experiencia;
+    private int flechas=42;
+    
 
     // type initializer
     {
-        flechas = 42;
+      //  flechas = 42;
     }
     
     /**
@@ -24,7 +24,7 @@ public class Elfo
      */
     public Elfo(String umNome, int flechas)
     {
-        this(umNome);
+        super(0,umNome);
         // this.nome = nome;
         this.flechas = flechas;
     }
@@ -34,8 +34,8 @@ public class Elfo
      * 
      * @param nome Nome a ser dado para o Elfo.
      */
-    public Elfo(String nome) {
-        this.nome = nome;
+    public Elfo(String nome){
+        super(0,nome);
     }
     
     /**
