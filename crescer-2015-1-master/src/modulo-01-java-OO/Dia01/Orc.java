@@ -246,6 +246,29 @@ public class Orc
         return itemMaiorQuantidade;
     }
     
+    /**
+     * Ordena itens do inventário por quantidade ascendente.
+     * 
+     * Algoritmo atual: Bubblesort
+     */
+    public void ordenarItens() {
+        
+        for (int i = 0; i < this.itens.size(); i++) {
+            for (int j = 0; j < this.itens.size() - 1; j++) {
+                ItemDoInventario itemAtual = this.itens.get(j);
+                ItemDoInventario proximo = this.itens.get(j + 1);
+                
+                boolean precisaTrocar = 
+                    itemAtual.getQuantidade() > proximo.getQuantidade();
+                
+                if (precisaTrocar) {
+                    this.itens.set(j, proximo);
+                    this.itens.set(j + 1, itemAtual);
+                }
+            }
+        }
+    }
+    
     private double gerarNumero() {
         
         double numeroGerado = 0.0;
