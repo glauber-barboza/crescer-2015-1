@@ -6,8 +6,6 @@
  */
 public class Elfo extends Personagem
 {
-    // Versão correção do tema!!
-    
     private int flechas=42;
     
 
@@ -36,6 +34,7 @@ public class Elfo extends Personagem
      */
     public Elfo(String nome){
         super(0,nome);
+
     }
     
     /**
@@ -56,10 +55,6 @@ public class Elfo extends Personagem
     
     public int getFlechas() {
         return this.flechas;
-    }
-    
-    public int getExperiencia() {
-        return this.experiencia;
     }
     
     /*public void setFlechas(int novaQtdFlechas) {
@@ -127,8 +122,4 @@ public class Elfo extends Personagem
         builder.append(textoNiveis);
         builder.append(" de experiência.");*/
     }
-    
-    
-    
-    
 }
