@@ -7,7 +7,6 @@ import java.util.*;
  */
 public class Orc extends Personagem
 {
-    private ArrayList<ItemDoInventario> itens = new ArrayList<ItemDoInventario>();
     private final int NUMERO_SORTE = 3481;
 
     /**

@@ -6,7 +6,7 @@
  */
 public class Elfo extends Personagem
 {
-    private int flechas=42;
+    protected int flechas=42;
     
 
     // type initializer
