@@ -244,6 +244,9 @@ public class Orc
         }
         
         return itemMaiorQuantidade;
+        
+        // C#
+        // return this.itens.Max(x => x.getQuantidade());
     }
     
     /**
@@ -253,7 +256,7 @@ public class Orc
      */
     public void ordenarItens() {
         
-        for (int i = 0; i < this.itens.size(); i++) {
+        /*for (int i = 0; i < this.itens.size(); i++) {
             for (int j = 0; j < this.itens.size() - 1; j++) {
                 ItemDoInventario itemAtual = this.itens.get(j);
                 ItemDoInventario proximo = this.itens.get(j + 1);
@@ -266,7 +269,21 @@ public class Orc
                     this.itens.set(j + 1, itemAtual);
                 }
             }
-        }
+        }*/
+        
+        Collections.sort(this.itens, new Comparator<ItemDoInventario>() {
+            public int compare(ItemDoInventario item, ItemDoInventario outroItem) {
+                return Integer.compare(item.getQuantidade(), outroItem.getQuantidade());
+            }
+        });
+        
+        
+        // C#:
+        // return this.itens.OrderBy(x => x.getQuantidade());
+        
+        // Ruby:
+        // this.itens.sort_by { |x| x.get_quantidade }
+        
     }
     
     private double gerarNumero() {
