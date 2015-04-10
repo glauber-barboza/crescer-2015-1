@@ -398,11 +398,6 @@ public class OrcTest
         assertEquals(1, lanca.getQuantidade());
     }
     
-    /**
-     * Teste para verificar o item que o ork mais tem no inventário
-     * Comparação 2 itens 
-     */
-    
     @Test
     public void getMaiorQuantidadeComNenhumItem() {
         // Arrange
@@ -458,82 +453,6 @@ public class OrcTest
         ItemDoInventario resultado = orc.getItemComMaiorQuantidade();
         // Assert
         assertEquals(beyBlade, resultado);
-    }
-    
-    @Test
-    public void testOrdenarItensMaiorMedioMenor() {
-        // Arrange
-        Orc orc = new Orc();
-        ArrayList<ItemDoInventario> itens2 = new ArrayList<ItemDoInventario>();
-        
-        ItemDoInventario adaga = new ItemDoInventario(16, "Adaga");
-        ItemDoInventario pocao = new ItemDoInventario(15, "Poções");
-        ItemDoInventario flecha = new ItemDoInventario(14, "Poções");
-        
-        orc.adicionarItem(adaga);
-        orc.adicionarItem(pocao);
-        orc.adicionarItem(flecha);
-        
-        itens2.add(flecha);
-        itens2.add(pocao);
-        itens2.add(adaga);
-        // Act
-        orc.ordenarItens();
-        ArrayList<ItemDoInventario> intesOrc = orc.getItens();
-        // Assert
-        assertEquals(itens2, intesOrc);
-    }
-    
-     @Test
-    public void testOrdenarItensMedioMenorMaior() {
-        // Arrange
-        Orc orc = new Orc();
-        ArrayList<ItemDoInventario> itens2 = new ArrayList<ItemDoInventario>();
-        
-        ItemDoInventario adaga = new ItemDoInventario(15, "Adaga");
-        ItemDoInventario pocao = new ItemDoInventario(14, "Poções");
-        ItemDoInventario flecha = new ItemDoInventario(16, "Poções");
-        
-        
-        orc.adicionarItem(adaga);
-        orc.adicionarItem(pocao);
-        orc.adicionarItem(flecha);
-        
-        itens2.add(pocao);
-        itens2.add(adaga);
-        itens2.add(flecha);
-        // Act
-        orc.ordenarItens();
-        ArrayList<ItemDoInventario> intesOrc = orc.getItens();
-        // Assert
-        assertEquals(itens2, intesOrc);
-    }
-    
-     @Test
-    public void testOrdenarItensMaiorMenorMedio() {
-        // Arrange
-        Orc orc = new Orc();
-        ArrayList<ItemDoInventario> itens2 = new ArrayList<ItemDoInventario>();
-        
-        ItemDoInventario adaga = new ItemDoInventario(16, "Adaga");
-        ItemDoInventario pocao = new ItemDoInventario(14, "Poções");
-        ItemDoInventario flecha = new ItemDoInventario(15, "Poções");
-    
-        
-        orc.adicionarItem(adaga);
-        orc.adicionarItem(pocao);
-        orc.adicionarItem(flecha);
-        
-        itens2.add(pocao);
-        itens2.add(flecha);
-        itens2.add(adaga);
-        // Act
-        orc.ordenarItens();
-        ArrayList<ItemDoInventario> intesOrc = orc.getItens();
-        // Assert
-        assertEquals(itens2, intesOrc);
-        
-        //fazer test sem item, com 1 item e com item negativo
     }
 }
 

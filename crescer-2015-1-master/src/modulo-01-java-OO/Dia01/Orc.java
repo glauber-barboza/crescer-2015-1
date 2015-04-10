@@ -223,6 +223,29 @@ public class Orc
         
     }
     
+    public ItemDoInventario getItemComMaiorQuantidade() {
+        
+        ItemDoInventario itemMaiorQuantidade = null;
+        
+        boolean temItens = !this.itens.isEmpty();       
+        if (temItens) {
+            itemMaiorQuantidade = this.itens.get(0);
+            
+            for (int i = 1; i < this.itens.size(); i++) {
+                ItemDoInventario itemAtual = this.itens.get(i);
+                boolean encontreiAMaiorQuantidade =
+                    itemAtual.getQuantidade() > itemMaiorQuantidade.getQuantidade();
+                
+                if (encontreiAMaiorQuantidade) {
+                    // atualizar a minha referência para o maior parcial
+                    itemMaiorQuantidade = itemAtual;
+                }
+            }
+        }
+        
+        return itemMaiorQuantidade;
+    }
+    
     private double gerarNumero() {
         
         double numeroGerado = 0.0;
@@ -261,51 +284,7 @@ public class Orc
         } else if (this.experiencia > 2) {
             numeroGerado = numeroGerado * numeroGerado;
         }
-        return numeroGerado;
-    }
-    
-    public ItemDoInventario getItemComMaiorQuantidade(){
-         ItemDoInventario itemMaiorQuantidade = null;
-        
-        boolean temItens = !this.itens.isEmpty();       
-        if (temItens) {
-            itemMaiorQuantidade = this.itens.get(0);
-            
-            for (int i = 1; i < this.itens.size(); i++) {
-                ItemDoInventario itemAtual = this.itens.get(i);
-                boolean encontreiAMaiorQuantidade =
-                    itemAtual.getQuantidade() > itemMaiorQuantidade.getQuantidade();
                 
-                if (encontreiAMaiorQuantidade) {
-                    // atualizar a minha referência para o maior parcial
-                    itemMaiorQuantidade = itemAtual;
-                }
-            }
-        }
-        return itemMaiorQuantidade;
-    }
-    
-    public void ordenarItens(){
-        ArrayList<ItemDoInventario> itens2 = new ArrayList<ItemDoInventario>();
-        ItemDoInventario itemMenorQuantidade = null;
-        ItemDoInventario itemAtual= null;
-       boolean temItens = !this.itens.isEmpty();       
-        if (temItens) {  
-        while(this.itens.size() > 0){
-             itemMenorQuantidade = this.itens.get(0);
-            for (int i = 0; i < this.itens.size(); i++) {
-                itemAtual = this.itens.get(i);
-               
-                if (itemAtual.getQuantidade() < itemMenorQuantidade.getQuantidade()) {
-                    // atualizar a minha referência para o maior parcial
-                    itemMenorQuantidade = itemAtual;
-                    
-                }
-            }
-            itens2.add(itemMenorQuantidade);
-            itens.remove(itemMenorQuantidade);
-        }
-    }
-    itens=itens2;
+        return numeroGerado;
     }
 }
