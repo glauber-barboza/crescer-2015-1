@@ -48,6 +48,22 @@ public class ElfoVerde extends Elfo
         experiencia++;
         umOrc.recebeAtaque();
     }
-   
+    
+    /**
+     *
+     *Elfos só podem ter dois tipos de
+     *itens: "Espada de aço valiriano" ou
+     *“Arco e Flecha de vidro".
+     */
+    public void elfoVerdeRecebeItem(ItemDoInventario item) {
+        //flechas = flechas - 1;
+        ItemDoInventario espada = new ItemDoInventario(1, "Espada de aço Valiriano");
+        ItemDoInventario arcoEflecha = new ItemDoInventario(1, "Arco e Flecha de vidro");
+                 
+        if(item == espada || item == arcoEflecha){
+        super.adicionarItem(item);
+    }
+    
+    }
     
 }
