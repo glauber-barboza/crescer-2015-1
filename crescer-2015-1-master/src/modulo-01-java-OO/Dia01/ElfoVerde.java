@@ -8,6 +8,12 @@ import java.util.*;
 public class ElfoVerde extends Elfo 
 {
     private final ArrayList<String> itensPermitidos=new ArrayList<String>(); 
+    {
+        
+        itensPermitidos.add("Espada de aço valiriano");
+        
+        itensPermitidos.add("Arco e Flecha de vidro");
+    }
     
     public ElfoVerde(String nome) {
         super(nome);
@@ -37,6 +43,13 @@ public class ElfoVerde extends Elfo
         if (descricaoValida) {
             super.adicionarItem(item);
         }
+       
+    }
+    
+     
+        public void elfoNorutnoAtaca(Orc orc) {
+        
+        super.elfoNorutnoAtaca(orc);
 
     }
 }

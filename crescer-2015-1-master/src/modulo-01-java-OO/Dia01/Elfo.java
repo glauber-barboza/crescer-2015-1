@@ -25,6 +25,7 @@ public class Elfo extends Personagem
         super(0,umNome);
         // this.nome = nome;
         this.flechas = flechas;
+        this.vida=100;
     }
     
     /**
@@ -34,7 +35,7 @@ public class Elfo extends Personagem
      */
     public Elfo(String nome){
         super(0,nome);
-
+        this.vida=100;
     }
     
     /**
@@ -122,6 +123,19 @@ public class Elfo extends Personagem
         builder.append(textoNiveis);
         builder.append(" de experiência.");*/
         
+    }
+    
+    /**
+     * elfos noturnos ao atirar flechas
+     * ganham o triplo de experiencia, mas perdem 5% de sua vida atual;
+     *
+     */
+    protected void elfoNorutnoAtaca(Orc orc){
+    experiencia+=3;
+    flechas--;
+    vida -= (vida*0.05);
+    orc.recebeAtaque();
+    
     }
     
 }
