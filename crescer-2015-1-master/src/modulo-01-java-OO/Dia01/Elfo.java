@@ -125,17 +125,9 @@ public class Elfo extends Personagem
         
     }
     
-    /**
-     * elfos noturnos ao atirar flechas
-     * ganham o triplo de experiencia, mas perdem 5% de sua vida atual;
-     *
-     */
-    protected void elfoNorutnoAtaca(Orc orc){
-    experiencia+=3;
-    flechas--;
-    vida -= (vida*0.05);
-    orc.recebeAtaque();
-    
+    public void setStatus(Status novoStatus) {
+        this.status = novoStatus;
     }
+  
     
 }

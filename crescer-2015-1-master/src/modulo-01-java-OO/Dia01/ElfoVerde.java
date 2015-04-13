@@ -46,10 +46,4 @@ public class ElfoVerde extends Elfo
        
     }
     
-     
-        public void elfoNorutnoAtaca(Orc orc) {
-        
-        super.elfoNorutnoAtaca(orc);
-
-    }
 }
