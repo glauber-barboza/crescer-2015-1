@@ -100,4 +100,59 @@ public class ElfoVerdeTeste
         ArrayList<ItemDoInventario> inventarioObtido = elfoVerde.getItens();
         assertEquals(inventarioEsperado, inventarioObtido);
     }
+    
+     @Test
+    public void ElfoNoturnoAtacaUmaVez() {
+        Elfo elfoNoturno=new Elfo("Tio Patinhas");
+        Orc shureck=new Orc();
+        
+        elfoNoturno.elfoNorutnoAtaca(shureck);
+        
+        int vidaEsperada= elfoNoturno.getVida();
+        int experienciaExperada= elfoNoturno.getExperiencia();
+       
+        assertEquals(95, vidaEsperada);
+        
+        assertEquals(3, experienciaExperada);
+    }
+    
+     @Test
+    public void ElfoNoturnoAtacaDuasVezes() {
+        Elfo elfoNoturno=new Elfo("Tio Patinhas");
+        Orc shureck=new Orc();
+        
+        elfoNoturno.elfoNorutnoAtaca(shureck);
+        elfoNoturno.elfoNorutnoAtaca(shureck);
+        
+        int vidaEsperada= elfoNoturno.getVida();
+        int experienciaExperada= elfoNoturno.getExperiencia();
+       
+        assertEquals(90, vidaEsperada);
+        
+        assertEquals(6, experienciaExperada);
+    }
+    
+     @Test
+    public void ElfoNoturnoAtacaDezVezes() {
+        Elfo elfoNoturno=new Elfo("Tio Patinhas");
+        Orc shureck=new Orc();
+        
+        elfoNoturno.elfoNorutnoAtaca(shureck);
+        elfoNoturno.elfoNorutnoAtaca(shureck);
+        elfoNoturno.elfoNorutnoAtaca(shureck);
+        elfoNoturno.elfoNorutnoAtaca(shureck);
+        elfoNoturno.elfoNorutnoAtaca(shureck);
+        elfoNoturno.elfoNorutnoAtaca(shureck);
+        elfoNoturno.elfoNorutnoAtaca(shureck);
+        elfoNoturno.elfoNorutnoAtaca(shureck);
+        elfoNoturno.elfoNorutnoAtaca(shureck);
+        elfoNoturno.elfoNorutnoAtaca(shureck);
+        
+        int vidaEsperada= elfoNoturno.getVida();
+        int experienciaExperada= elfoNoturno.getExperiencia();
+       
+        assertEquals(57, vidaEsperada);
+        
+        assertEquals(30, experienciaExperada);
+    }
 }
