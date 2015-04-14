@@ -6,8 +6,8 @@
  */
 public class Elfo extends Personagem
 {
-    protected int flechas=42;
-    
+    private int flechas=42;
+    private static int contElfos=0;
 
     // type initializer
     {
@@ -23,10 +23,12 @@ public class Elfo extends Personagem
      */
     public Elfo(String umNome, int flechas)
     {
+       
         super(0,umNome);
         // this.nome = nome;
         this.flechas = flechas;
         this.vida=100;
+        contElfos++;
     }
     
     /**
@@ -37,6 +39,7 @@ public class Elfo extends Personagem
     public Elfo(String nome){
         super(0,nome);
         this.vida=100;
+         contElfos++;
     }
     
     /**
@@ -129,6 +132,11 @@ public class Elfo extends Personagem
     public void setStatus(Status novoStatus) {
         this.status = novoStatus;
     }
-  
+    public int getQuantosElfosForamCriados() {
+        return contElfos;
+    }
+    public static void zeraContadorElfos(){
+    contElfos=0;
+    }
     
 }

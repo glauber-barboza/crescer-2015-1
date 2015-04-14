@@ -147,6 +147,41 @@ public class ElfoTest
         assertEquals(resultadoEsperado, resultadoObtido);
     }
     
+       @Test
+    public void quantosElfosForamCriadosExUmElfo() {
+        // Arrange
+        Elfo zerador = new Elfo("Faustão");
+        zerador.zeraContadorElfos();
+        Elfo elfo = new Elfo("Faustão");
+        int resultadoEsperado = 1;
+        // Act
+        int resultadoObtido = elfo.getQuantosElfosForamCriados();
+        // Assert
+        assertEquals(resultadoEsperado, resultadoObtido);
+    }
+    
+       @Test
+    public void quantosElfosForamCriadosExdezElfos() {
+        // Arrange
+        Elfo.zeraContadorElfos();
+        Elfo elfo1 = new Elfo("Faustão");
+        Elfo elfo2 = new Elfo("Faustão");
+        Elfo elfo3 = new Elfo("Faustão");
+        Elfo elfo4 = new Elfo("Faustão");
+        Elfo elfo5 = new Elfo("Faustão");
+        Elfo elfo6 = new Elfo("Faustão");
+        Elfo elfo7 = new Elfo("Faustão");
+        Elfo elfo8 = new Elfo("Faustão");
+        Elfo elfo9 = new Elfo("Faustão");
+        Elfo elfo10 = new Elfo("Faustão");
+        
+        int resultadoEsperado = 10;
+        // Act
+        int resultadoObtido = elfo1.getQuantosElfosForamCriados();
+        // Assert
+        assertEquals(resultadoEsperado, resultadoObtido);
+    }
+    
     
     
     
