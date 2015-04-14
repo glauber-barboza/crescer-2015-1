@@ -13,6 +13,9 @@ import org.junit.Test;
  */
 public class ElfoNoturnoTest
 {
+    
+    private final double DELTA = 0.05;
+    
     /**
      * Default constructor for test class ElfoNoturnoTest
      */
@@ -30,7 +33,7 @@ public class ElfoNoturnoTest
         double vidaEsperada= elfoNoturno.getVida();
         int experienciaExperada= elfoNoturno.getExperiencia();
        
-        assertEquals(95, vidaEsperada);
+        assertEquals(95, vidaEsperada,DELTA);
         
         assertEquals(3, experienciaExperada);
     }
@@ -46,7 +49,7 @@ public class ElfoNoturnoTest
         double vidaEsperada= elfoNoturno.getVida();
         int experienciaExperada= elfoNoturno.getExperiencia();
        
-        assertEquals(90, vidaEsperada);
+        assertEquals(90.25, vidaEsperada, DELTA);
         
         assertEquals(6, experienciaExperada);
     }
@@ -70,25 +73,21 @@ public class ElfoNoturnoTest
         double vidaEsperada= elfoNoturno.getVida();
         int experienciaExperada= elfoNoturno.getExperiencia();
        
-        assertEquals(57, vidaEsperada);
+        assertEquals(59.87, vidaEsperada, DELTA);
         
         assertEquals(30, experienciaExperada);
     }
     
        @Test
     public void ElfoNoturnoAtacaAteMorrer() {
-        ElfoNoturno elfoNoturno=new ElfoNoturno("Tio Patinhas");
-        Orc shureck=new Orc();
-         Status status= elfoNoturno.getStatus();
-         
-        for(int i=0;i <=100;i++){
-        elfoNoturno.elfoNorutnoAtaca(shureck);
-      }
-      
-        double vidaEsperada= elfoNoturno.getVida();
-        int experienciaExperada= elfoNoturno.getExperiencia();
-        assertEquals(0, vidaEsperada);
-        
-        assertEquals(status.MORTO, status);
+        ElfoNoturno elfoSuicida = new ElfoNoturno("Night Legolas");
+        Status statusEsperado = Status.MORTO;
+
+        for (int i = 0; i < 90; i++){
+            elfoSuicida.elfoNorutnoAtaca(new Orc());
+        }
+        Status obtido = elfoSuicida.getStatus();
+
+        assertEquals(statusEsperado, obtido);
     }
 }

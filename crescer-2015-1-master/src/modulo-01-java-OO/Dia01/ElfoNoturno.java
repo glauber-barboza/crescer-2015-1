@@ -26,12 +26,10 @@ public class ElfoNoturno extends Elfo
      */
     protected void elfoNorutnoAtaca(Orc orc){
         super.atirarFlecha(orc);
-    experiencia+=2;
-    vida-= this.vida*0.05;
-    super.getStatus();
-    if(vida<=0.0){
-        super.setStatus(Status.MORTO);
-    
-    }
+        this.experiencia += 2;
+        double qtdVidaAPerder = this.vida * 0.05;
+        //double qtdVidaAPerder = this.vida * 5/100;
+        this.vida -= qtdVidaAPerder;
+        this.status = (int)this.vida == 0 ? Status.MORTO : this.status;
     }
 }
