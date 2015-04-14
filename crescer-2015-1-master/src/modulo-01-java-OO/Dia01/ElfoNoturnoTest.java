@@ -27,7 +27,7 @@ public class ElfoNoturnoTest
         
         elfoNoturno.elfoNorutnoAtaca(shureck);
         
-        int vidaEsperada= elfoNoturno.getVida();
+        double vidaEsperada= elfoNoturno.getVida();
         int experienciaExperada= elfoNoturno.getExperiencia();
        
         assertEquals(95, vidaEsperada);
@@ -43,7 +43,7 @@ public class ElfoNoturnoTest
         elfoNoturno.elfoNorutnoAtaca(shureck);
         elfoNoturno.elfoNorutnoAtaca(shureck);
         
-        int vidaEsperada= elfoNoturno.getVida();
+        double vidaEsperada= elfoNoturno.getVida();
         int experienciaExperada= elfoNoturno.getExperiencia();
        
         assertEquals(90, vidaEsperada);
@@ -67,7 +67,7 @@ public class ElfoNoturnoTest
         elfoNoturno.elfoNorutnoAtaca(shureck);
         elfoNoturno.elfoNorutnoAtaca(shureck);
         
-        int vidaEsperada= elfoNoturno.getVida();
+        double vidaEsperada= elfoNoturno.getVida();
         int experienciaExperada= elfoNoturno.getExperiencia();
        
         assertEquals(57, vidaEsperada);
@@ -85,7 +85,7 @@ public class ElfoNoturnoTest
         elfoNoturno.elfoNorutnoAtaca(shureck);
       }
       
-        int vidaEsperada= elfoNoturno.getVida();
+        double vidaEsperada= elfoNoturno.getVida();
         int experienciaExperada= elfoNoturno.getExperiencia();
         assertEquals(0, vidaEsperada);
         
