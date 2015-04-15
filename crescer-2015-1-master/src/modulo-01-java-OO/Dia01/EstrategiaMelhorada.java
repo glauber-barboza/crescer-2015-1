@@ -7,27 +7,27 @@ import java.util.*;
  */
 public class EstrategiaMelhorada
 {
-     public void atacarOrcs(ArrayList<Elfo> elfos, ArrayList<Orc> orcs) {
-        System.out.println("Estratégia normalzinha...");
-        ElfoNoturno elfoNoturno=new ElfoNoturno("Tio Patinhas");
+
+    public void atacarOrcs(ArrayList<Elfo> elfos, ArrayList<Orc> orcs) {
+        System.out.println("Super estratégia noturna.. ATIVAR!!!");
         
-        int quantidadeDeAtaques= elfos.size() * orcs.size();
-        int limiteElfosNoturnos= (int)(quantidadeDeAtaques * 0.3);
-        int quantidadeNoturnosQueJaAtacaram=0;
-        boolean elfoNoturnoQueVaiAtaca;
-        for (Elfo elfoQueVaiatacar : elfos) {
-            elfoNoturnoQueVaiAtaca= elfoQueVaiatacar instanceof ElfoNoturno;
-            if(elfoNoturnoQueVaiAtaca){
-                if(quantidadeNoturnosQueJaAtacaram >= limiteElfosNoturnos){
-                 for (Orc orc : orcs) {
-                elfoQueVaiatacar.atirarFlecha(orc);
-                }
-                }
-            }
-             for (Orc orc : orcs) {
-                elfoQueVaiatacar.atirarFlecha(orc);
-            }
-        }        
+        int qtdAtaques = elfos.size() * orcs.size();
+        int limiteElfosNoturnos = (int)(qtdAtaques * 0.3);
+        int qtdElfosNoturnosQueJáAtacaram = 0;
         
+        for (Elfo elfoQueVaiAtacar : elfos) {
+            boolean éElfoNoturno = elfoQueVaiAtacar instanceof ElfoNoturno;
+            
+            if (éElfoNoturno) {
+                if (qtdElfosNoturnosQueJáAtacaram >= limiteElfosNoturnos)
+                    continue;
+                qtdElfosNoturnosQueJáAtacaram++;
+            }
+            
+            for (Orc orc : orcs) {
+                elfoQueVaiAtacar.atirarFlecha(orc);
+            }
+            
+        }
     }
 }

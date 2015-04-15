@@ -79,5 +79,8 @@ public class ExercitoDeElfos
         estrategia.atacarOrcs(elfosQueVãoPraPeleia, orcs);
     }
     
+    public void mudaDeEstrategia(EstrategiaDeAtaque novaEstrategia) {
+        estrategia = novaEstrategia;
+    } 
 
 }
