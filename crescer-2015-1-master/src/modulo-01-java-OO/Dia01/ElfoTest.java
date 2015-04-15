@@ -147,6 +147,7 @@ public class ElfoTest
         assertEquals(resultadoEsperado, resultadoObtido);
     }
     
+<<<<<<< HEAD:crescer-2015-1-master/src/modulo-01-java-OO/Dia01/ElfoTest.java
        @Test
     public void quantosElfosForamCriadosExUmElfo() {
         // Arrange
@@ -181,6 +182,70 @@ public class ElfoTest
         // Assert
         assertEquals(resultadoEsperado, resultadoObtido);
     }
+=======
+    @Test
+    public void criarUmElfoIncrementaQtdElfos() {
+        // Arrange
+        int esperado = 1;
+        // Act
+        Elfo elfo = new Elfo("Faustão");
+        // Assert
+        assertEquals(esperado, Elfo.getQtdElfosCriados());
+    }
+    
+    @Test
+    public void criarDoisElfosIncrementaQtdElfos() {
+        // Arrange
+        int esperado = 2;
+        // Act
+        new Elfo("Faustão");
+        new Elfo("Faustão II");
+        // Assert
+        assertEquals(esperado, Elfo.getQtdElfosCriados());
+    }
+    
+    @Test
+    public void criarTresElfosIncrementaQtdElfos() {
+        // Arrange
+        int esperado = 3;
+        // Act
+        new Elfo("Faustão");
+        new Elfo("Faustão II");
+        new Elfo("Faustão III");
+        // Assert
+        assertEquals(esperado, Elfo.getQtdElfosCriados());
+    }
+    
+    @Before
+    public void setUp() {
+        Elfo.resetaQuantidadeDeElfos();
+    }
+    
+    @Test
+    public void doisElfosComMesmoNomeSaoIguais() {
+        // Arrange
+        boolean esperado = true;
+        // Act
+        Elfo legolas = new Elfo("Legolas");
+        Elfo legolas2 = new Elfo("Legolas");
+        // Assert
+        assertEquals(esperado, legolas.equals(legolas2));
+    }
+    
+    @Test
+    public void doisElfosComNomesDiferentesNaoSaoIguais() {
+        // Arrange
+        boolean esperado = false;
+        // Act
+        Elfo legolas = new Elfo("Legolas");
+        Elfo legolas2 = new Elfo("Legolas II");
+        // Assert
+        assertEquals(esperado, legolas.equals(legolas2));
+    }
+    
+    
+    
+>>>>>>> abd8259af470045c4050ab5cb397cdaeeffb6389:src/modulo-01-java-OO/Dia01/ElfoTest.java
     
 }
 
