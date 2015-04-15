@@ -6,15 +6,10 @@
  */
 public class Elfo extends Personagem
 {
-<<<<<<< HEAD:crescer-2015-1-master/src/modulo-01-java-OO/Dia01/Elfo.java
-    private int flechas=42;
-    private static int contElfos=0;
-=======
     // Versão correção do tema!!
     private int flechas;
     private static int qtdElfosCriados;
     private int x;
->>>>>>> abd8259af470045c4050ab5cb397cdaeeffb6389:src/modulo-01-java-OO/Dia01/Elfo.java
 
     // type initializer
     {
@@ -36,7 +31,6 @@ public class Elfo extends Personagem
         // this.nome = nome;
         this.flechas = flechas;
         this.vida=100;
-        contElfos++;
     }
     
     /**
@@ -47,7 +41,6 @@ public class Elfo extends Personagem
     public Elfo(String nome){
         super(0,nome);
         this.vida=100;
-         contElfos++;
     }
     
     /**
@@ -149,15 +142,7 @@ public class Elfo extends Personagem
     public void setStatus(Status novoStatus) {
         this.status = novoStatus;
     }
-<<<<<<< HEAD:crescer-2015-1-master/src/modulo-01-java-OO/Dia01/Elfo.java
-    public int getQuantosElfosForamCriados() {
-        return contElfos;
-    }
-    public static void zeraContadorElfos(){
-    contElfos=0;
-    }
-    
-=======
+
     
     /**
      * Verifica se dois elfos são iguais.
@@ -170,5 +155,4 @@ public class Elfo extends Personagem
     public boolean equals(Object outro) {
         return ((Elfo)outro).getNome().equals(this.nome);
     }
->>>>>>> abd8259af470045c4050ab5cb397cdaeeffb6389:src/modulo-01-java-OO/Dia01/Elfo.java
 }
