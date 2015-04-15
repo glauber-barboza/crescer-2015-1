@@ -125,9 +125,12 @@ public class ExercitoDeElfosTest
         exercitoEsperado.put(elfo3.getNome(), elfo3);
         ExercitoDeElfos exercito = new ExercitoDeElfos();
         // Act
-              try{
-       
+        try{
         exercito.alistar(elfoBase);
+        }
+        catch(NaoPodeAlistarException error){
+        }
+              try{
         exercito.alistar(elfo);
         exercito.alistar(elfo2);
         exercito.alistar(elfo3);
@@ -263,6 +266,18 @@ public class ExercitoDeElfosTest
         // Assert
         assertEquals(esperado, resultado);
     }
-   
+    
+    @Test(expected=NaoPodeAlistarException.class)
+    public void alistarElfoBaseLançaErro() throws NaoPodeAlistarException {
+        // Arrange
+        Elfo elfo = new Elfo("Legolas");
+        ExercitoDeElfos exercito = new ExercitoDeElfos();
+        // Act
+        try {
+            exercito.alistar(elfo);
+        } catch (NaoPodeAlistarException error) {
+            throw error;
+        }
+    }
     
 }
