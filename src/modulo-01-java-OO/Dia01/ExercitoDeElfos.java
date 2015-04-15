@@ -1,4 +1,4 @@
-import java.util.HashMap;
+import java.util.*;
 
 /**
  * Abstração para um exército de Elfos.
@@ -8,9 +8,14 @@ import java.util.HashMap;
 public class ExercitoDeElfos
 {
     private HashMap<String, Elfo> exercito = new HashMap<>();
+    private HashMap<Status, ArrayList<Elfo>> porStatus = new HashMap<>();
     
     public HashMap<String, Elfo> getExercito() {
         return this.exercito;
+    }
+    
+    public HashMap<Status, ArrayList<Elfo>> getExercitoPorStatus() {
+        return this.porStatus;
     }
     
     /**
@@ -36,4 +41,44 @@ public class ExercitoDeElfos
     public Elfo buscar(String nome) {
         return exercito.get(nome);
     }
+    
+    public ArrayList<Elfo> buscar(Status status) {
+        agruparPorStatus();
+        return porStatus.get(status);
+    }
+    
+    /**
+     * Agrupa os elfos do exército utilizando o campo status dos objetos.
+     */
+    public void agruparPorStatus() {
+        
+        porStatus.clear();
+        
+        for (Map.Entry<String, Elfo> parChaveValor : exercito.entrySet()) {
+            Elfo elfo = parChaveValor.getValue();
+            Status status = elfo.getStatus();
+            
+            if (porStatus.containsKey(status)) {
+                porStatus.get(status).add(elfo);
+            } else {
+                porStatus.put(status, new ArrayList<>(
+                    Arrays.asList(elfo)
+                ));
+                // C#
+                // var arr = new [] { elfo, elfo1, elfo2, elfo3 };
+            }
+        }
+    }
+    
+
 }
+
+
+
+
+
+
+
+
+
+

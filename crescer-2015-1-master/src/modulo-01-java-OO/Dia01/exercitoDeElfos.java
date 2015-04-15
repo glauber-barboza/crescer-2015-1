@@ -11,7 +11,7 @@ public class exercitoDeElfos
     // instance variables - replace the example below with your own
     private int x;
     private HashMap<String, Object> agrupamento =new HashMap<>();  
-   // private HashMap<Status, ArrayList<Elfos>> porStatus =new HashMap<>();  
+    private HashMap<Status, ArrayList<Elfo>> porStatus =new HashMap<>();  
     /**
      * Constructor for objects of class exercitoDeElfos
      */
@@ -35,26 +35,4 @@ public class exercitoDeElfos
         return agrupamento;
         }
         
-        
-        /**
-         * Agrupa os elfos por status
-         */
-    public void agrupmento(String elfo){
-     //   Elfo elfo= parChaveValor.getValue();
-      //  Status status= elfo.getStatus();
-     //   porStatus.clear();
-    //for(Map.Entry<String, Elfo> parChaveValor : agrupamento.entrySet()){
-        
-     //       Elfo elfo= parChaveValor.getValue();
-     //   }
-      
-      //  if(porStatus.contaisKey(status)){
-       //     porStatus.get(status).add(elfo);
-    //}else{
-    
-    //        porStatus.put(status, new Arraylist<>(Arrays.asList(elfo)));
-   // }
-    }
-
-            
      }
