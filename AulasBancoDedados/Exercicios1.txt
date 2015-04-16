@@ -1,0 +1,30 @@
+Quais tipos de objetos são utilizados, quando se deseja:
+1)armazenar uma lista/cadastro de fornecedores?
+tabela
+
+2)consultar (todos os dias) apenas os clientes ativos?
+view
+
+3)consultar (cfe ID) a data do último pagamento de um duplicata?
+funçao 
+
+4)efetuar o pagamento de uma mensalidade?
+procidery 
+
+5)gerar um sequencial para o ID de uma tabela?
+Sequence identity
+
+6)registrar o histórico de alterações do salário de um associado?
+
+
+7)adicionar uma nova informação ao associado: grau de instrução?
+alter table
+
+8)determinar que a coluna Situacao da tabela Pedido possa ter apenas 5 valores (A, C, S, T, E) ?
+check
+
+9)determinar que o nome de uma cidade não poderá ser repetido?
+unique key
+
+10)adicionar a informação sobre a cidade onde o associado trabalha?
+coluna ou forem key
