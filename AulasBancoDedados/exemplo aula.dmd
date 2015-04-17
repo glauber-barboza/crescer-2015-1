@@ -1,0 +1,9 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="exemplo aula" id="16417F40-D6BB-DDCF-E1BE-A9EE67FA0C3B" version="3.5">
+<createdBy>projetocrescer</createdBy>
+<createdTime>2015-04-17 16:39:09 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>exemplo aula</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>16417F40-D6BB-DDCF-E1BE-A9EE67FA0C3B</designId>
+</OSDM_Design>
