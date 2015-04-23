@@ -23,12 +23,43 @@ Group by e.UF
 Order by Contador Desc
 
 
---Valor inserido para testes
-insert into Associado(IDAssociado,Nome,dataNascimento,sexo,idCidade)
- values (3,'Teste',GETDATE(),'M',2);
-
 delete from Associado where IDAssociado=3
 
 
  --busca auxiliar
 select * from Associado
+select * from Cidade
+
+--4)Faça uma consulta que liste o nome do associado, o nome da cidade,
+-- e uma coluna que indique se a cidade é da região SUL (RS, SC, PR),
+-- se for imprimir *** (3 asteriscos), senão imprimir nulo.
+
+select a.Nome, c.Nome,
+case when c.UF in ('RS','SC','PR') then '*'
+end E_do_sul_tche
+	
+from Associado a
+
+inner join Cidade c on a.IDCidade=c.IDCidade ;
+
+
+--5)Liste o nome do empregado, o nome do gerente, e o departamento de cada um.
+
+
+select  e.NomeEmpregado, 
+		d.NomeDepartamento, 
+		e.Cargo,
+	case 
+		when e.Cargo ='Gerente' then Cargo
+	end Gerentes
+from Empregado e
+	inner join Departamento d on e.IDDepartamento= d.IDDepartamento
+order by Gerentes desc
+
+--6)Faça uma cópia da tabela Empregado e 
+--altere o salário de todos os empregados 
+--que o departamento fique na localidade de SAO PAULO, faça um reajuste de 14,5%
+
+
+
+
