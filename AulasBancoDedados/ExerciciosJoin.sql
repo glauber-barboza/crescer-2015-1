@@ -16,11 +16,11 @@ left join Cidade c on a.IDCidade=c.IDCidade ;
 
 Select  e.UF, count(1) Contador
 From Cidade e
-Where EXISTS(Select *
+Where  not EXISTS(Select 1
 From Associado a
-Where ISNULL(a.IDCidade,0) = 0)
+Where a.IDCidade= e.IDCidade)
 Group by e.UF
-Order by Contador Desc
+order by Contador desc
 
 
 delete from Associado where IDAssociado=3
@@ -34,13 +34,16 @@ select * from Cidade
 -- e uma coluna que indique se a cidade é da região SUL (RS, SC, PR),
 -- se for imprimir *** (3 asteriscos), senão imprimir nulo.
 
-select a.Nome, c.Nome,
-case when c.UF in ('RS','SC','PR') then '*'
+create view vw_cidade_regiao as
+select a.Nome as nomeAssociado, 
+c.Nome as NomeCidade,
+case when c.UF in ('RS','SC','PR') then '***'
+else null
 end E_do_sul_tche
 	
 from Associado a
 
-inner join Cidade c on a.IDCidade=c.IDCidade ;
+left join Cidade c on a.IDCidade=c.IDCidade ;
 
 
 --5)Liste o nome do empregado, o nome do gerente, e o departamento de cada um.
@@ -60,6 +63,25 @@ order by Gerentes desc
 --altere o salário de todos os empregados 
 --que o departamento fique na localidade de SAO PAULO, faça um reajuste de 14,5%
 
+SELECT * INTO EmpregadoCOPIA 
+   FROM Empregado
+
+begin transaction
+go
+
+update Empregado
+set Salario =Salario + Salario*0.145
+where NomeEmpregado in (select e.NomeEmpregado
+from Empregado e
+inner join Departamento d on e.IDDepartamento = d.IDDepartamento and d.Localizacao='SAO PAULO')
+
+
+select NomeEmpregado,Salario
+from Empregado e
+inner join Departamento d on e.IDDepartamento = d.IDDepartamento and d.Localizacao='SAO PAULO'
+
+select Localizacao
+from Departamento
 
 
 
