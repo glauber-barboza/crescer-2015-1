@@ -77,11 +77,21 @@ inner join Departamento d on e.IDDepartamento = d.IDDepartamento and d.Localizac
 
 
 select NomeEmpregado,Salario
-from Empregado e
+from EmpregadoCOPIA e
 inner join Departamento d on e.IDDepartamento = d.IDDepartamento and d.Localizacao='SAO PAULO'
 
 select Localizacao
 from Departamento
 
+--7)Liste a diferença que representará o reajuste aplicado no item 
+--anterior no somatório dos salários de todos os empregados.
 
+select e.NomeEmpregado,
+e.Salario as salarioAtual,
+ec.Salario as salarioAntigo,
+e.Salario-ec.Salario as diferencaSalario
+from Empregado e
+inner join Departamento d on e.IDDepartamento = d.IDDepartamento and d.Localizacao='SAO PAULO'
+
+inner join EmpregadoCOPIA ec on ec.IDDepartamento = d.IDDepartamento and d.Localizacao='SAO PAULO'
 
