@@ -1,0 +1,13 @@
+Fluxograma de banco de dados 
+
+-efetuasse o cadastro de 1 ou n fornecedores
+
+-a esse é vinculado produtos por tipo de produtos
+
+- efetuasse a compra do produto e é informado a quantidade deos produtos
+obs cada compra pode ter varios produtos.
+
+- cada compra efetuada é gerada uma conta que é referenciada a empresa o valor e os produotos
+
+- o lancamento é informado com o tipo de pagamento, a conta e o sistema geram a data do lançamento.
+ 
