@@ -1,0 +1,84 @@
+--1
+select distinct situacao
+from produto;
+
+
+--2
+select RazaoSocial 
+from cliente
+where RazaoSocial like '%Ltda%';
+
+
+--3
+insert into produto
+(nome, PrecoCusto, PrecoVenda, Situacao)
+values
+('Galocha Maragato',35.67,77.95,'A');
+
+
+--4
+select * 
+from produto
+where not exists (select 1
+		from PedidoItem
+		where PedidoItem.IDproduto=produto.IDproduto
+		and exists (select 1
+					from pedido
+					where pedido.IDPedido=PedidoItem.IDPedido));
+
+
+--5
+
+
+--6
+select count(*) total_cidade
+from cidade
+inner join cliente on cliente.idcidade=cidade.idcidade
+inner join pedido on cliente.idcliente=pedido.idcliente
+
+
+--7
+select *
+from produto 
+where not exists(select 1
+				from ProdutoMaterial
+				where produto.IDProduto=ProdutoMaterial.IDProduto);
+
+
+--8
+select produto.idproduto, 
+		produto.nome,
+		sum(produto.PrecoCusto) as PrecoCusto_RS, 
+		sum(produto.precovenda) as PrecoCusto_Material_RS
+from produto, ProdutoMaterial
+where produto.IDProduto=ProdutoMaterial.IDProduto
+group by produto.idproduto, produto.nome;
+----------------------------X
+
+--9
+--precisa ser refeito a questão 8			
+
+
+--10
+select cliente.nome 
+from cliente
+group by cliente.nome
+having count(*)>1
+--considerar o mesmo nome para TODO O NOME ou o PRIMEIRO NOME??
+
+
+--11
+select top 1 with ties SUBSTRING(nome,0,charindex(' ',nome)) as NomePopular, count(*) as QtdVezesNome
+from cliente 
+where SUBSTRING(nome,0,charindex(' ',nome)) in (select SUBSTRING(nome,0,charindex(' ',nome))
+												from cliente)
+group by SUBSTRING(nome,0,charindex(' ',nome))
+order by count(*) desc;
+
+
+--12
+select top 1 with ties produto.nome, max(produtomaterial.quantidade) as Quantidade
+from produto, ProdutoMaterial
+where produto.IDProduto=ProdutoMaterial.IDProduto
+group by produto.nome
+order by max(produtomaterial.quantidade) desc;
