@@ -95,3 +95,27 @@ inner join Departamento d on e.IDDepartamento = d.IDDepartamento and d.Localizac
 
 inner join EmpregadoCOPIA ec on ec.IDDepartamento = d.IDDepartamento and d.Localizacao='SAO PAULO'
 
+
+--8)Liste o departamento que possui o empregado de maior salário.
+select top 1 d.nomedepartamento, e.salario
+from departamento d
+inner join empregado e on e.IDDepartamento=d.IDDepartamento
+order by e.salario desc;
+
+--9)Faça uma consulta para exibir o nome de cada associado 
+--e sua cidade e juntamente com os empregados (nome) e a cidade 
+--(localidade) de seu departamento, isto deve ser exibido em uma consulta.
+select a.nome, c.nome
+from associado a, cidade c
+where a.IDCidade=c.IDCidade
+union all
+select e.NomeEmpregado ,d.Localizacao
+from  empregado e, departamento d
+where e.IDDepartamento=d.IDDepartamento;
+
+--10)Lista as cidades que tenham associado relacionado.
+select cidade.nome
+from cidade
+inner join associado on associado.IDCidade=cidade.IDCidade;
+
+
