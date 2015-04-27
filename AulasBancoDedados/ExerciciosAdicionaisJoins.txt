@@ -1,3 +1,7 @@
+Demoro mais  tempo para fazer os exercícios, pois tenho que ficar procurando alguns exemplos da sintaxe nos outros exercicis já feitos, creio que com mais pratica eu memorize melhor as sintaxes
+
+
+
 --1
 select distinct situacao
 from produto;
