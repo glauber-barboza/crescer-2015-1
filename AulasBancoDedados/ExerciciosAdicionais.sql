@@ -44,7 +44,23 @@ where not exists (select 1
 --(tabela Cliente), liste também qual o Estado possuí o menor número de clientes.
 --Dica: pode (não é obrigatório) ser utilizado subquery, e também UNION.
 
+create view v_numero_clientes_maior as
+select top 1 with ties count(*) numerosClientes, Cidade.UF
+from cidade, cliente
+where cliente.idcidade=cidade.idcidade
+group by Cidade.UF
+order by numerosClientes desc;
 
+create view v_numero_clientes_menor as
+select top 1 with ties count(*) numerosClientes, Cidade.UF
+from cidade
+inner join cliente on cliente.idcidade=cidade.idcidade
+group by Cidade.UF
+order by numerosClientes asc;
+
+select * from v_numero_clientes_maior
+union all
+select * from v_numero_clientes_menor;
 
 
 --6) Liste o total de cidades (distintas) que possuem clientes que realizaram algum pedido.
@@ -77,6 +93,17 @@ where produto.IDProduto=ProdutoMaterial.IDProduto
 group by produto.idproduto, produto.nome;
 
 --9			
+select * 
+from v_produto_soma
+where PrecoCusto < SomaMaterial;		
+
+begin transaction
+
+update produto
+set PrecoCusto=(select isnull (sum(material.PrecoCusto*ProdutoMaterial.Quantidade),0) as SomaMaterial
+					from ProdutoMaterial,Material
+					where ProdutoMaterial.IDMaterial=Material.IDMaterial
+					and produto.IDProduto=ProdutoMaterial.IDProduto)
 
 
 --10) Liste os clientes que tenham o mesmo nome 
