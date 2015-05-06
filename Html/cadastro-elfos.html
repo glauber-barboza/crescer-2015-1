@@ -7,7 +7,7 @@
 		
 		<title> Cadastro de Elfos</title>
 			<h3>Cadastro de Elfos<h3>
-		<form method="POST">
+		<form method="POST" enctype="multipart/form-data">
 					
 			<div style="height: 50px">
 				<label for="nome" > 
@@ -20,15 +20,15 @@
 				<label for="sexo">
 					Sexo do Elfo:
 				</label> </br>
-					<input type="radio" id="sexo" name="sexo" value="male" required> Masculino
+					<input type="radio" id="sexo" name="sexo" value="m" required> Masculino
 					<br>
-					<input type="radio" id="sexo" name="sexo" value="female" required> Feminino
+					<input type="radio" id="sexo" name="sexo" value="f" required> Feminino
 			</div>
 			<div style="height: 50px"> 
 				<label for="QtdadeFlechas">
 					Quantidade de flechas:
 				</label> </br>
-				<input name="QtdadeFlechas" id="QtdadeFlechas" type="number" placeholder="42">
+				<input name="QtdadeFlechas" id="QtdadeFlechas" type="number" value ="42">
 			</div>
 			
 			<div style="height: 50px">
@@ -66,8 +66,8 @@
 				<label for="itens">
 						Upload de Imagem:
 				</label> </br>
-				<input type="file" name="imagem"  accept="image/x-png, image/png, image/jpeg"/>
-				<!--http://www.w3schools.com/tags/att_form_accept.asp-->
+				<input type="file" name="imagem"  accept=".png, .png, .jpeg"/>
+				
 			</div>
 			<div style="height: 50px">
 				<input type="submit" value="Cadastrar">
