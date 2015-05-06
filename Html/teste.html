@@ -1,0 +1,110 @@
+<form action="/Contato" data-ajax="true" data-ajax-complete="submitCompleted" data-ajax-mode="replace" data-ajax-success="submitSuccess" data-ajax-update="#request-result" id="form0" method="post">            <span><small>Campos obrigatórios <span class="required">*</span></small></span>
+            <div class="container">
+                <label>Informe o assunto da mensagem <span class="required">*</span> :</label>
+                <input class="text-box single-line" data-val="true" data-val-length="The field Subject must be a string with a maximum length of 128." data-val-length-max="128" data-val-required="The Subject field is required." id="Contact_Subject" name="Contact.Subject" type="text" value="">
+            </div>
+            <div class="container">
+                <div class="width-medium">
+                    <label>Nome <span class="required">*</span> :</label>
+                    <input class="text-box single-line" data-val="true" data-val-length="The field Name must be a string with a maximum length of 64." data-val-length-max="64" data-val-required="The Name field is required." id="Contact_Name" name="Contact.Name" type="text" value="">
+                </div>
+                <div class="width-medium">
+                    <label>Empresa <span class="required">*</span> :</label>
+                    <input class="text-box single-line" data-val="true" data-val-length="The field Company must be a string with a maximum length of 64." data-val-length-max="64" data-val-required="The Company field is required." id="Contact_Company" name="Contact.Company" type="text" value="">
+                </div>
+            </div>
+            <div class="container">
+                <div class="width-medium">
+                    <label>E-mail <span class="required">*</span> :</label>
+                    <input class="text-box single-line" data-val="true" data-val-length="The field Email must be a string with a maximum length of 64." data-val-length-max="64" data-val-regex="The field Email must match the regular expression '^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$'." data-val-regex-pattern="^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$" data-val-required="The Email field is required." id="Contact_Email" name="Contact.Email" type="text" value="">
+                </div>
+                <div class="width-medium">
+                    <label>Telefone <span class="required">*</span> :</label>
+                    <input class="placeHolder-input" data-val="true" data-val-length="The field Phone must be a string with a maximum length of 32." data-val-length-max="32" data-val-required="The Phone field is required." id="Contact_Phone" name="Contact.Phone" placeholder="(__) ____-____" type="text" value="">
+                </div>
+            </div>
+            <div class="container">
+                <div class="width-more">
+                    <label>Endereço:</label>
+                    <input class="text-box single-line" data-val="true" data-val-length="The field Address must be a string with a maximum length of 128." data-val-length-max="128" id="Contact_Address" name="Contact.Address" type="text" value="">
+                </div>
+                <div class="width-more">
+                    <label>Cidade:</label>
+                    <input class="text-box single-line" data-val="true" data-val-length="The field City must be a string with a maximum length of 64." data-val-length-max="64" id="Contact_City" name="Contact.City" type="text" value="">
+                </div>
+                <div class="width-more selectEstado">
+                    <label>Estado:</label>
+                    <div class="select-state-wrapper">
+                        <select id="select-state" name="Contact.State">
+                            <option value="AC">AC</option>
+                            <option value="AL">AL</option>
+                            <option value="AM">AM</option>
+                            <option value="AP">AP</option>
+                            <option value="BA">BA</option>
+                            <option value="CE">CE</option>
+                            <option value="DF">DF</option>
+                            <option value="ES">ES</option>
+                            <option value="GO">GO</option>
+                            <option value="MA">MA</option>
+                            <option value="MG">MG</option>
+                            <option value="MS">MS</option>
+                            <option value="MT">MT</option>
+                            <option value="PA">PA</option>
+                            <option value="PB">PB</option>
+                            <option value="PE">PE</option>
+                            <option value="PI">PI</option>
+                            <option value="PR">PR</option>
+                            <option value="RJ">RJ</option>
+                            <option value="RN">RN</option>
+                            <option value="RO">RO</option>
+                            <option value="RR">RR</option>
+                            <option value="RS">RS</option>
+                            <option value="SC">SC</option>
+                            <option value="SE">SE</option>
+                            <option value="SP">SP</option>
+                            <option value="TO">TO</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="container address">
+                <label>Mensagem <span class="required">*</span> :</label>
+                <textarea cols="20" data-val="true" data-val-length="The field Message must be a string with a maximum length of 1024." data-val-length-max="1024" data-val-required="The Message field is required." id="Contact_Message" maxlength="1024" name="Contact.Message" rows="2"></textarea>
+            </div>
+            <div id="request-result" class="inline-message"></div>
+
+<div id="#captchaValues">
+    <input type="hidden" name="captcha_challenge">
+    <input type="hidden" name="captcha_response">
+</div>
+            
+<div id="captchaModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="Validação Captcha" aria-hidden="true">
+    <script type="text/javascript">
+		var RecaptchaOptions = {
+			theme : 'blackglass',
+			tabindex : 0
+		};
+
+</script><script type="text/javascript" src="http://www.google.com/recaptcha/api/challenge?k=6LdG3_ESAAAAAFTTKMfAZH4Fg05ZSPXGyxLFTqim">
+
+</script><script type="text/javascript" src="http://www.google.com/recaptcha/api/js/recaptcha.js"></script><div id="recaptcha_widget_div" class=" recaptcha_nothad_incorrect_sol recaptcha_isnot_showing_audio"><div id="recaptcha_area"><table id="recaptcha_table" class="recaptchatable recaptcha_theme_blackglass"> <tbody><tr> <td colspan="6" class="recaptcha_r1_c1"></td> </tr> <tr> <td class="recaptcha_r2_c1"></td> <td colspan="4" class="recaptcha_image_cell"><center><div id="recaptcha_image" style="width: 300px; height: 57px;"><img id="recaptcha_challenge_image" alt="Imagem de desafio reCAPTCHA" height="57" width="300" src="http://www.google.com/recaptcha/api/image?c=03AHJ_VuvuQ8nZ8UIAwssae05gLTvm8RUjwKPNP7H25qqw3Nhh1iSPHMQF0lrMG6p3aHUKb63P1b8M0bShj9TLa-0YPvsHmlPJobVDNOJW_IUoFR11pvQ1phnDC5YrhoKCw5KiZ9rUKTVERntJDIN8ZND4Fy5X9sGGdvxopzHmPqRB1mDE8ppYoBXI5eDmvbGBXtamHJFK2Rk5DEUSylG51QcBnw7xq_WMTWdYwwdGj4x4p9M7JWi9hxWfWTDTZp5w1xaMx_WAfLhq9KRQUlYx59cccByAy2-csg&amp;th=,3Sywnk_jv_Mqpxi2JwcLyypVwvPwAAAAKKAAAAAd2ADMViPFP2zNN2zfjCtOY5dR1kOHzF_mr39gdFD7y9C-Utk35Od-b9Z0gJ7Vk8WmvjD9gIuGFx6mPjV0YIa-EZAHdlchIy-v-1aOHoMBVYJ7fhChyzEHD6S3O09vS3oge-rzZhmCxoIVFQPXgSqSqkgxebrsuehsvntZ4w3y5W-k5SCS6LIWSAjtVKDUI7HDJLB2MBArDezMBNEobbXoMbtpX66rX0gX35uHTttv9dt8KBRNOt5gJ78Gh1gfKx4MxYD11bmY5P5DuJt8NZ4i"></div></center></td> <td class="recaptcha_r2_c2"></td> </tr> <tr> <td rowspan="6" class="recaptcha_r3_c1"></td> <td colspan="4" class="recaptcha_r3_c2"></td> <td rowspan="6" class="recaptcha_r3_c3"></td> </tr> <tr> <td rowspan="3" class="recaptcha_r4_c1" height="49"> <div class="recaptcha_input_area"> <span id="recaptcha_challenge_field_holder" style="display: none;"><input type="hidden" name="recaptcha_challenge_field" id="recaptcha_challenge_field" value="03AHJ_VuvuQ8nZ8UIAwssae05gLTvm8RUjwKPNP7H25qqw3Nhh1iSPHMQF0lrMG6p3aHUKb63P1b8M0bShj9TLa-0YPvsHmlPJobVDNOJW_IUoFR11pvQ1phnDC5YrhoKCw5KiZ9rUKTVERntJDIN8ZND4Fy5X9sGGdvxopzHmPqRB1mDE8ppYoBXI5eDmvbGBXtamHJFK2Rk5DEUSylG51QcBnw7xq_WMTWdYwwdGj4x4p9M7JWi9hxWfWTDTZp5w1xaMx_WAfLhq9KRQUlYx59cccByAy2-csg"></span><input name="recaptcha_response_field" id="recaptcha_response_field" type="text" autocorrect="off" autocapitalize="off" placeholder="Digite o texto" autocomplete="off"> <span id="recaptcha_privacy" class="recaptcha_only_if_privacy"></span> </div> </td> <td rowspan="4" class="recaptcha_r4_c2"></td> <td><a id="recaptcha_reload_btn" title="Obter um novo desafio"><img id="recaptcha_reload" width="25" height="17" src="http://www.google.com/recaptcha/api/img/blackglass/refresh.gif" alt="Obter um novo desafio"></a></td> <td rowspan="4" class="recaptcha_r4_c4"></td> </tr> <tr> <td><a id="recaptcha_switch_audio_btn" class="recaptcha_only_if_image" title="Obter um desafio de áudio"><img id="recaptcha_switch_audio" width="25" height="16" alt="Obter um desafio de áudio" src="http://www.google.com/recaptcha/api/img/blackglass/audio.gif"></a><a id="recaptcha_switch_img_btn" class="recaptcha_only_if_audio" title="Obter um desafio visual"><img id="recaptcha_switch_img" width="25" height="16" alt="Obter um desafio visual" src="http://www.google.com/recaptcha/api/img/blackglass/text.gif"></a></td> </tr> <tr> <td><a id="recaptcha_whatsthis_btn" title="Ajuda"><img id="recaptcha_whatsthis" width="25" height="16" src="http://www.google.com/recaptcha/api/img/blackglass/help.gif" alt="Ajuda"></a></td> </tr> <tr> <td class="recaptcha_r7_c1"></td> <td class="recaptcha_r8_c1"></td> </tr> </tbody></table> </div></div><noscript>
+		&lt;iframe src="http://www.google.com/recaptcha/api/noscript?k=6LdG3_ESAAAAAFTTKMfAZH4Fg05ZSPXGyxLFTqim" width="500" height="300" frameborder="0"&gt;
+
+		&lt;/iframe&gt;&lt;br /&gt;&lt;textarea name="recaptcha_challenge_field" rows="3" cols="40"&gt;&lt;/textarea&gt;&lt;input name="recaptcha_response_field" value="manual_challenge" type="hidden" /&gt;
+</noscript>
+    <div class="modal-footer">
+        <a href="#" class="btn sendForm btn-sendForm">Enviar Mensagem</a>
+    </div>
+</div>
+                        <div class="alignBtnForm">
+                <div id="send-result" class="inline-message">Ops... faltam algumas informações!</div>
+                <a href="#captchaModal" class="btn btn-sendForm fancybox" tabindex="10">Enviar Mensagem</a>
+
+                <input id="hiddenSubmit" type="submit" value="Enviar Mensagem">
+            </div>
+            <div class="alignBtnForm oportunidades">
+                <span>Buscando por oportunidades, 
+                    <a href="/Oportunidades">clique aqui!</a>
+                </span>
+            </div>
+</form>
