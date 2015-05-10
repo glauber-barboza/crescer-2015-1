@@ -3,8 +3,15 @@
 function brewdog(texto1, texto2){
 	var t1 = texto1;
 	var t2 = texto2;
-	
-	return Math.max(t1.length<, t2.length);
+	var contador=0;
+	var t3=0;
+	 t3 = Math.max(t1.length, t2.length);
+	for(var i=0; i<t3; i++){
+		if(t1[i]!==t2[i]){
+			contador++;
+		}
+	}
+	return contador;
 }
 
   [
@@ -75,15 +82,19 @@ function Emprestimo(valorTotal, juros, parcelas){
 	  var palindromo=String.toLowerCase();
 	  var palindromo1 = palindromo.replace(/\W|\s|\d/gi,'');
 	  var palindromo2 = palindromo1.split('').reverse().join('');
-	  if(palindromo1==='iluminatti' || palindromo1==='ledesma'|| palindromo1==='dante'|| palindromo1==='verdemusgo'|| palindromo1==='bacon'){
-		  console.log(palindromo+' É um Palíndromo Iluminatti');
-		  return true;
-	  }
-	  else if(palindromo2===palindromo1){
+	  var array=['iluminatti','ledesma','dante','verdemusgo','bacon'];
+	  
+	  var valida = array.indexOf(palindromo1);
+	  
+		if(valida===0){
+			console.log(palindromo+' É um Palíndromo Iluminatti');
+			return true;
+		}
+		else if(palindromo2===palindromo1){
 			console.log(palindromo+' É um palindromo');
 			return true;
 		
-	  }else{
+		}else{
 		return false;
-	  }
+		}
   }
