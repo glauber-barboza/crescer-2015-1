@@ -104,7 +104,26 @@ ordenaPorContinentais(times);
 	
 ordenaPorContinentais(times);
 
+//3 a
+//quando nao inicializei a vaiavel ele estava retornando NaN
+	function somarPorNacionais(Array){
+		var soma=0;
+		for(var i=0;i<Array.length;i++){
+			soma=Array[i].titulos[0].qtd+soma;
+			//console.log(soma=Array[i].titulos[0].qtd+soma);//console.log imprime no conlole
+		}
+		return soma;
+	};
+		
+	}
+somarPorContinentais(Array)
 
 
-
-
+function somarPorContinentais(Array){
+		var soma=0;
+		for(var i=0;i<Array.length;i++){
+			soma=Array[i].titulos[0].qtd+soma;
+			//console.log(soma=Array[i].titulos[0].qtd+soma);//console.log imprime no conlole
+		}
+		return soma;
+	};
