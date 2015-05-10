@@ -1,20 +1,10 @@
 //Exercicio 1
 
 function brewdog(texto1, texto2){
-	var t1 = texto1.split('');
-	var t2 = texto2.split('');
-	var contador=0;
-	if(t1.length<t2.length){
-		var aux=t1;
-		t1=t2;
-		t2=aux;
-	}
-	for(var i=0; i<t1.length; i++){
-		if(t1[i]!==t2[i]){
-			contador++;
-		}
-	}
-	return contador;
+	var t1 = texto1;
+	var t2 = texto2;
+	
+	return Math.max(t1.length<, t2.length);
 }
 
   [
