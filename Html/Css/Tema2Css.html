@@ -4,32 +4,36 @@
     <meta charset="utf-8">
     <title>Exemplo de CSS a ser melhorado!</title>
     <style>
-      .azulFont2m {
+      .azul{
         color: blue;
-        font-size: 2em;
       }
-      .vermelhoFont2m {
-        font-size: 2em;
-        color: red;
-      }
-	   
-      .vermelho {
+	   .vermelho {
          color: red;
       }
+      .tamnaho2m {
+        font-size: 2em;
+      }
+	   
       .caixinha-preta {
         background-color: black;
-        float: left;
-        width: 400px;
         height: 50px;
         border-radius: 15px;
       }
+	  .quadradoPretoSuper{
+		width: 400px; 
+		float: left;
+	  }
 	  .fontEmComun{
-	  font-family: 'Comic Sans MS';
+		font-family: 'Comic Sans MS';
 	  
 	  }
 	  .alinhamento{
-	  text-align: center;
+		text-align: center;
 	  }
+	  .margigem{
+		margin: 0 0 0 50
+	  }
+	  
       #sqn {
         background-color: black;
       }
@@ -37,14 +41,14 @@
     </style>
   </head>
   <body>
-    <div class="caixinha-preta fontEmComun alinhamento">
-      <span class="azulFont2m">CSS</span>
-      <span class="vermelhoFont2m">é</span> 
+    <div class="caixinha-preta fontEmComun alinhamento quadradoPretoSuper">
+      <span class="tamnaho2m azul">CSS</span>
+      <span class="tamnaho2m vermelho">é</span> 
     </div>
-    <div id="sqn" class="fontEmComun alinhamento" style=" width: 400px; float: left;">
-      <span class="azulFont2m">super</span>
+    <div id="sqn" class="fontEmComun alinhamento quadradoPretoSuper">
+      <span class="azul tamnaho2m">super</span>
     </div>
-    <span class="alinhamento vermelho" id="sqn" style="color: red; margin: 0 0 0 50;">legal</span>
-    <span class="alinhamento vermelhoFont2m" style="margin-left: 50">#sqn</span>
+    <span class="alinhamento vermelho margigem" id="sqn">legal</span>
+    <span class="alinhamento tamnaho2m vermelho margigem">#sqn</span>
   </body>
 </html>
