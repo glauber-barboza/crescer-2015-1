@@ -166,44 +166,26 @@ console.log(a);
 var b =$("#myList li:eq(2)")
 console.log(b);
 //1 C
-$("[for=q]")
+$("#search label[for=q]")
 
-
-var exercicio3 = function(){
-	$("input[name=q]").val(
-	$("label[for=q]").html());	
-};
 //1 D
 console.log($("[alt]").length);
+
 //  1 E
-$("table tr:even:not(:first-child)")
-	.each(function(i, elem){
-	console.log(elem);
-});
+$('#fruits tr:even:not(:first-child)');
+
+
 //1 F
-$("h2:contains('B'):contains('e')")
-	.each(function(i, elem){
-	console.log(elem,'\n');
-});
+$('h2:contains(b):contains(e)').size();
+
 // 1 G 
-$('#myList li').filter(function() {    
-    return ( $(this).css('color')  === 'rgb(255, 0, 0)');
-});
+$('#myList li:not(.current)');
+
 // 1h
  $('html body img:last');
  $('html body h3:last');
  
  // 1 i
- var salva = 0; var soma = 0;
-$('#myList li').filter(function(i,elem) {    
-	if(salva !== 0){
-		soma = soma + $(this).text().length;
-		}
-		if ( $(this).css('color')  === 'rgb(255, 0, 0)'){
-		salva = i;
-		}
-	});  
-	console.log(soma);
 
 
 
@@ -219,6 +201,13 @@ console.log('Exercício 2 ',
 $("input:text").parent().addClass("template");
 
 
+
+//3c
+
+$('div.module last')
+	.last()
+	.after($('<div/>')
+	.addClass('module').append($('imd:eq(0)').clone()));
 
 </script>
 </body>
