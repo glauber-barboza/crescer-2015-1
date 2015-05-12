@@ -159,13 +159,63 @@
 <script src="js/tabs.js"></script>
 -->
 <script>
-//A
-//$("#blog")
-//B
-//$("#myList li:eq(2)")
+//1 A
+var a =$("#blog")
+console.log(a);
+//1 B
+var b =$("#myList li:eq(2)")
+console.log(b);
+//1 C
+$("[for=q]")
 
-//C
-//$("[for=q]")
+
+var exercicio3 = function(){
+	$("input[name=q]").val(
+	$("label[for=q]").html());	
+};
+//1 D
+console.log($("[alt]").length);
+//  1 E
+$("table tr:even:not(:first-child)")
+	.each(function(i, elem){
+	console.log(elem);
+});
+//1 F
+$("h2:contains('B'):contains('e')")
+	.each(function(i, elem){
+	console.log(elem,'\n');
+});
+// 1 G 
+$('#myList li').filter(function() {    
+    return ( $(this).css('color')  === 'rgb(255, 0, 0)');
+});
+// 1h
+ $('html body img:last');
+ $('html body h3:last');
+ 
+ // 1 i
+ var salva = 0; var soma = 0;
+$('#myList li').filter(function(i,elem) {    
+	if(salva !== 0){
+		soma = soma + $(this).text().length;
+		}
+		if ( $(this).css('color')  === 'rgb(255, 0, 0)'){
+		salva = i;
+		}
+	});  
+	console.log(soma);
+
+
+
+
+<!------------------------------------------------------------------------ 2 --------------------------------------------------->
+// 2-a
+
+//console.log('Exercício 2 CAMIGOAL',
+// '\n', $("img[alt]").each(function(){
+//		return $(this);}));
+
+
 
 
 </script>
