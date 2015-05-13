@@ -1,0 +1,21 @@
+package ex2_2;
+
+import java.util.ArrayList;
+
+import listator.Filme;
+
+public class NetFlox {
+	
+	ArrayList<String> filme=new ArrayList<String>();
+	
+	
+	public void reproduzirFilme(Filme filme){ 
+	filme.toString();	
+	
+	//Filme fi=new Filme();
+//	fi.adicionarFilme("Um morto muito louco", Genero.comedia);	
+		
+		
+	}
+
+}

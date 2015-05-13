@@ -1,0 +1,35 @@
+package listator;
+
+import java.util.ArrayList;
+
+
+public class Filme {
+	ArrayList<Ator> elenco=new ArrayList<Ator>();
+	
+	
+	public void adicionaAtor(Ator Ator) {
+		elenco.add(Ator);
+		
+	}
+	
+	
+	public ArrayList<Ator> buscaAtor(String nome) {
+		ArrayList<Ator> atoresEncontrados=new ArrayList<Ator>();
+		
+		for (int i = 0; i < elenco.size(); i++){
+			elenco.get(i).getNome().equals(nome);
+			atoresEncontrados.add(elenco.get(i));
+		
+		}
+		
+		return atoresEncontrados;
+		
+	}
+	
+	@Override
+	public String toString() {
+		
+		return "Qualquer Coisa";
+	}
+
+}

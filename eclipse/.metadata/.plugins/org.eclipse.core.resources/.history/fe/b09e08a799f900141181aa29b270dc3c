@@ -1,0 +1,15 @@
+package listator;
+
+import java.util.ArrayList;
+
+
+
+public class Ator {
+	ArrayList<String> atores=new ArrayList<String>();
+	
+	public void colocarAtores(String <> nomeAtor){
+		
+		atores=nomeAtor;
+	}
+
+}

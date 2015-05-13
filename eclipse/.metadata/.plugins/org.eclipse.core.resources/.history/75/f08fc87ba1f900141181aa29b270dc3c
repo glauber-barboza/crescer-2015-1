@@ -1,0 +1,13 @@
+package listarTest;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class cwiTest {
+	@Test
+	public void quandoExecutaToLowerCase() throws Exception {
+		assertFalse(true);
+	}
+
+}

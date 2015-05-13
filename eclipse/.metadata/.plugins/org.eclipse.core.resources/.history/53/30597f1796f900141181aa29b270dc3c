@@ -1,0 +1,16 @@
+package listator;
+
+import java.util.ArrayList;
+
+import javax.swing.JOptionPane;
+
+public class BuscaPasta {
+
+	public static void main(String[] args) {
+		String empresa= "CWI SOFTWARE";
+		ArrayList<String>teste= new ArrayList<String>();
+		
+		System.out.println(empresa.toLowerCase());
+		JOptionPane.showMessageDialog(null, empresa.toLowerCase());	
+	}
+}

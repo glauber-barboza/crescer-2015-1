@@ -1,0 +1,36 @@
+package listator;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
+import javax.swing.text.StyledEditorKit.ForegroundAction;
+
+public class Filme {
+	ArrayList<Ator> elenco=new ArrayList<Ator>();
+	
+	
+	public void elenco(Ator Ator) {
+		elenco.add(Ator);
+		
+	}
+	
+	
+	public ArrayList name(String nome) {
+		ArrayList<Ator> atoresEncontrados=new ArrayList<Ator>();
+		
+		for (int i = 0; i < elenco.size(); i++){
+			elenco.get(i).ge
+			
+		}
+		
+		return atoresEncontrados;
+		
+	}
+	
+	@Override
+	public String toString() {
+		
+		return "Qualquer Coisa";
+	}
+
+}

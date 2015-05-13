@@ -1,0 +1,15 @@
+package ex2_2;
+
+public enum Genero {
+	acao("Ação"),
+	comedia("Comédia"),
+	terror("Terror"),
+	suspense("Suspense");
+
+	private Genero(String genero){
+			
+			
+		}
+	
+
+}

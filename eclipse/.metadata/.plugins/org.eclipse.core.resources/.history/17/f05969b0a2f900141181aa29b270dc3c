@@ -1,0 +1,29 @@
+package listarTest;
+
+import static org.junit.Assert.*;
+
+import java.util.ArrayList;
+
+import listator.Ator;
+import listator.Filme;
+
+import org.junit.Test;
+
+public class cwiTest {
+	@Test
+	public void adicionar1Ator() throws Exception {
+		Ator at=new Ator("Marlon");
+		Filme filme=new Filme();
+		
+		ArrayList<Ator> elencoRetorno=new ArrayList<Ator>();
+		
+		filme.adicionaAtor(at);
+		
+		elencoRetorno=filme.buscaAtor("Marlon");
+		
+		
+		assertEquals(filme, elencoRetorno);
+		
+	}
+
+}
