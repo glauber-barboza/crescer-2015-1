@@ -49,8 +49,13 @@ public class Filme {
 		
 		
 		
-		
 		return retorno;
+	}
+	
+	public Genero getTipo(){
+		
+		return tipo;
+		
 	}
 
 }
