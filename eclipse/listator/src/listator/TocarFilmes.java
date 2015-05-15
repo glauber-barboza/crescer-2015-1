@@ -30,6 +30,8 @@ public class TocarFilmes {
 		
 		System.out.println(net.buscaContadorDeViews(Genero.acao));
 		System.out.println(ilt.buscaContadorDeViews(Genero.acao));
+		
+
 
 
 	}

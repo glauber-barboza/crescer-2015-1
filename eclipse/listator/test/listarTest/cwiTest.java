@@ -1,13 +1,17 @@
 package listarTest;
 
+
+
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 
+import org.junit.Test;
+
 import listator.Ator;
 import listator.Filme;
 
-import org.junit.Test;
+
 
 public class cwiTest {
 	@Test
