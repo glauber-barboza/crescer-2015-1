@@ -11,14 +11,14 @@ public class NetFlox {
 	HashMap<Genero,Integer> FilmesJaAssistidos = new HashMap<Genero,Integer>();
 	
 	
-	public void reproduzirFilme(Filme filme){ 
+	public void reproduzirFilme(Filme filme,Genero tipo){ 
 	System.out.println(filme.toString());	
 	
 	int valordoContador= 0;
-	valordoContador=buscaContadorDeViews(filme.getTipo());
+	valordoContador=buscaContadorDeViews(tipo);
 
 		valordoContador++;
-	contadorDeViews(filme.getTipo(), valordoContador);
+	contadorDeViews(tipo, valordoContador);
 	}
 	
 	public void gerarRelatorio() {

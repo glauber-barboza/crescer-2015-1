@@ -10,13 +10,13 @@ public class Iltube {
 	HashMap<Genero,Integer> FilmesJaAssistidos = new HashMap<Genero,Integer>();
 	
 	
-	public void reproduzirFilme(Filme filme,Genero tipo){ 
+	public void reproduzirFilme(Filme filme){ 
 	System.out.println(filme.toString());	
 	
 	int valordoContador= 0;
-	valordoContador=buscaContadorDeViews(tipo);
+	valordoContador=buscaContadorDeViews(filme.getTipo());
 		valordoContador++;
-	contadorDeViews(tipo, valordoContador);
+	contadorDeViews(filme.getTipo(), valordoContador);
 	}
 	
 	public void gerarRelatorio() {
