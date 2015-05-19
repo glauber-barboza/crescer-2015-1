@@ -1,5 +1,9 @@
 package listator;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 import ex2_2.Genero;
 import ex2_2.Iltube;
 import ex2_2.NetFlox;
@@ -8,6 +12,8 @@ public class TocarFilmes {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+	
+		
 		
 		Filme filme=new Filme();
 		NetFlox net=new NetFlox();
@@ -31,7 +37,11 @@ public class TocarFilmes {
 		System.out.println(net.buscaContadorDeViews(Genero.acao));
 		System.out.println(ilt.buscaContadorDeViews(Genero.acao));
 		
-
+		
+		
+		
+		
+		
 
 
 	}
