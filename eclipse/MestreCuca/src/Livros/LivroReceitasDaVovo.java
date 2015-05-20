@@ -23,8 +23,8 @@ public class LivroReceitasDaVovo implements LivroDeReceitas{
 	@Override
 	public void atualizar(String nome, Receita receitaAtialisada) {
 		
-	boolean verifica= false;
-		if(nome!=null && receitaAtialisada!=null && !nome.isEmpty()){
+		boolean verifica= false;
+		  if(nome!=null && receitaAtialisada!=null && !nome.isEmpty()){
 		
 		for (int i = 0; i < receitas.size(); i++) {
 			if(receitas.get(i).getNome().equals(nome)){
@@ -46,6 +46,7 @@ public class LivroReceitasDaVovo implements LivroDeReceitas{
 	@Override
 	public void excluir(String nome) {
 		for (int i = 0; i < receitas.size(); i++) {
+			
 			if(receitas.get(i).getNome().equals(nome)){
 				receitas.remove(receitas.get(i));
 
@@ -70,6 +71,7 @@ public class LivroReceitasDaVovo implements LivroDeReceitas{
 				System.out.println("Receita atualizada");
 			}else{
 				System.out.println("Essa receita não existe");
+				throw new NaoTemReceitaCException("Receita nao existe");
 			}
 			
 		}
@@ -92,7 +94,7 @@ public class LivroReceitasDaVovo implements LivroDeReceitas{
 		
 	}
 
-	public ArrayList<Receita> naoTemReceitaCException(List<Ingrediente> ingredientes ){
+	public ArrayList<Receita> buscareceitaSemIngrediente(List<Ingrediente> ingredientes ){
 		int ContadorMaluco=0;
 		LivroReceitasDaVovo livroVovo=new LivroReceitasDaVovo();
 		
@@ -135,8 +137,8 @@ public class LivroReceitasDaVovo implements LivroDeReceitas{
 	}
 	
 	
-	public void ListaDecompras(List<Receita> receitas) {
-		List<Ingrediente> ingredientesCompra = receitas.get(0).getIngredientes() ;
+	public void ListaDecompras(List<Ingrediente> ingredi) {
+		List<Ingrediente> ingredientesCompra = ingredi;
 		
 		for (Receita receita : receitas) {
 			

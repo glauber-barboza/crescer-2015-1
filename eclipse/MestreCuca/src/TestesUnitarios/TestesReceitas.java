@@ -30,6 +30,7 @@ public class TestesReceitas {
 	
 	LivroReceitasDaVovo vovo=new LivroReceitasDaVovo();
 	
+
 	vovo.inserir(batatFrita);
 		
 	
