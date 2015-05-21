@@ -26,9 +26,6 @@ public class RodaABarganhaAE {
 		novasReceitas.add(carreteiro);
 
 		
-		
-		
-		
 		novasReceitas.add(null);
 		
 		new LivroReceitasJson(caminho,novasReceitas);

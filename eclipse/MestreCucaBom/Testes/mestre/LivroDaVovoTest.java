@@ -112,7 +112,7 @@ public class LivroDaVovoTest {
 
 	@Test(expected=ReceitaNaoEncontradaException.class)
 	public void excluiReceitaNaoEncontrada() throws Exception {
-		livro.excluir("n√£o existe");
+		livro.excluir("n√o existe");
 	}
 	
 	@Test
