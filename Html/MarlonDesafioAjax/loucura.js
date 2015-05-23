@@ -1,25 +1,29 @@
 'use strict';
-
+"cc8e6df76fee"
 
 var meuNome={nome:'Glauber'}
 var jsonLoco= JSON.stringify(meuNome); 
+var retorno=[];
 
 
 
 
+	function inicio(){
 
-function inicio(){
-
-			$.ajax({
-		type: "POST",
-		url: 'http://illuminati.instaweb.com.br:6789/autentica',
-		data: jsonLoco,
-		dataType: 'json'
-	}).done(function(data){
-	alert('Funfo?')
-		
+				$.ajax({
+			type: "get",
+			url: 'http://localhost:4567/tarefas?token=cc8e6df76fee',
+			dataType: 'json'
+		}).done(function(data){
+		alert('Funfo?')
+			var retorno = $('.albums');
+		$.each(data.items, function(i, itemRecebido){}));
+	
+		});
+		}
+		$(function() {
+	inicio()
 	});
-	}
 
 var r1={RESPOSTA:8}
 var res1= JSON.stringify(r1); 
