@@ -6,6 +6,10 @@ var id = [];
 function pesquisar(){
 	
 	var procura = $('input[name=pesquisa]').val().toLowerCase();
+	if(procura==="justin bieber"){
+		procura="patati patata"
+		
+	}
 	
 	$.ajax({
 		url: 'https://api.spotify.com/v1/search?q='+procura+'&type=artist',
