@@ -1,22 +1,94 @@
+<!DOCTYPE html>
 <html>
+<meta charset="utf-8">
+
+	<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+		</head>
 	<body>
-		<marquee><img src="/img/dogao.gif"></marquee>
+<!-- Latest compiled and minified JavaScript -->
+<script src="http://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+		<div class="header">
+		</div>
 		
+		<div class="well">
 		
-		
-		<ul>
-			{{#filmes}}
-			<li>{{nome}}</li>
-			{{/filmes}}
+			<h3> Cadastre um Filme</h3>
+
+			
+			<div>
+				<form action="/salvar" method="post" name="form_cadastro" class="navbar-form navbar-left">
+				Nome do Filme:
+				<input name="nome" type="text" placeholder="Nome do Filme" class="form-control"><p>
+				Ano de Lançamento:
+				<input name="anoLancamento" type="text" placeholder="Ano de Lançamento" class="form-control"><p>
+				
+					Selecione o Genero do filme:
+<div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+    Dropdown
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+  </ul>
+</div>
+					 
+					<select name="genero">
+				
+						<option value="">Selecione o Genero do filme</option>
+							{{#generos}}
+						<option value="{{name}}">{{descricao}}</option>
+							{{/generos}}
+				</select>
+				
+			</div>
+				
+			<div>
+			
+			</div>
 			
 			
-		</ul>
-		<form action="/salvar" method="post">
-		<label> nome</label>
-		<input name="nome">
-			<label> Ano Lançamento</label>
-		<input name="nome">
-		<button>Salvar</button>
-		</form>
+				<div>
+				
+					<input name="anoLancamento" type="text" placeholder="Ano de Lançamento" class="form-control">
+				</div>
+				
+				<div>
+					<textarea name="sinopse" placeholder="Sinopse do Filme" class="form-control"></textarea> <p>
+				</div>
+				
+				<div>
+					<input type="text" placeholder="URL da capa do filme" name="imagem" class="form-control"><p>
+				</div>
+				
+				<div>
+				<button type="button" onClick="return validaFormulario()">Cadastrar</button>
+				</div>
+				
+			</form>
+		</div>
+		
+		<div class="listaDeFilmes box">
+				<h3> Filmes cadastrados</h3>
+				<ul>
+				{{#listaFilmes}}
+					<li>{{nome}} - {{genero.descricao}} - {{anoLancamento}} - {{sinopse}}</li>
+				{{/listaFilmes}}
+			</ul>
+		</div>
+		<div>
+		<button type="button" class="btn btn-sm btn-info">Salvar</button>
+		</div>
+		
+		
 	</body>
 </html>

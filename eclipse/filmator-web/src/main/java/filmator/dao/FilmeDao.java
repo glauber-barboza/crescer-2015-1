@@ -4,10 +4,34 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import javax.inject.Inject;
+
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Component;
+
 import filmator.model.Filme;
 
-public class FilmeDao {
+
+	@Component
+	public class FilmeDao {
+
+		@Inject
+		private JdbcTemplate jdbcTemplate;
+		
+		
+		public void inserir(Filme filme){
+			jdbcTemplate.update("INSERT INTO Filme (nome) VALUES (?)", filme.getNome());
+		}
+
+
+		public Object buscaTodosFilmes() {
+			// TODO Auto-generated method stub
+			return null;
+		}
+		
+	}
 	
+	/*
 	List<Filme> filmes=new ArrayList<Filme>();
 
 	public List<Filme> buscaTodosFilmes(){
@@ -43,7 +67,7 @@ public class FilmeDao {
 		
 			}
 		}
-		
-	}
-}
+		*/
+	
+
  

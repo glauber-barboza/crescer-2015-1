@@ -15,8 +15,6 @@ public class HomeController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Model model) {
 		FilmeDao dao = new FilmeDao();
-		model.addAttribute("mensagem", "fulano de tal");
-		model.addAttribute("millisegundos", System.currentTimeMillis());
 		model.addAttribute("filmes",  dao.buscaTodosFilmes());
 		return "nomeDoArquivo";
 	}
@@ -24,8 +22,6 @@ public class HomeController {
 	public String salvar(Filme filme,Model model) {
 		
 		FilmeDao dao = new FilmeDao();
-		model.addAttribute("mensagem", "fulano de tal");
-		model.addAttribute("millisegundos", System.currentTimeMillis());
 		model.addAttribute("filmes",  dao.buscaTodosFilmes());
 
 		return "nomeDoArquivo";
