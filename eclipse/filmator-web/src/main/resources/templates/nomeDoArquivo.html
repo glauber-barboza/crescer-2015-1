@@ -57,26 +57,27 @@
 		<div style="text-align:center;">
 			<h1 >Cadastro de filmes<h1>
 		</div>
-		<form class="form-horizontal">
-		<input type="text" class="form-control" placeholder="Nome do Filme" name="nomeFIlme">
-		<select class="form-control">
+		<form class="form-horizontal" action="/salvar" method="POST">
+		
+		<input name="nomeFilme" type="text" class="form-control" placeholder="Nome do Filme">
+		
+		<select class="form-control" name="genero">
 		
 									{{#generos}}														
-			<option value="{{name}}">{{descricao}}</option>
+			<option  value="{{name}}">{{descricao}}</option>
 									{{/generos}}
 		</select>  
 			<input class="form-control" placeholder="Data de lançamento" name="dataLancamento">
 
-		<input name="capaDoFilme" type="text" class="form-control" placeholder="URL da capa do filme">
+		<input name="img" type="text" class="form-control" placeholder="URL da capa do filme">
 		
-		<textarea class="form-control" rows="3" placeholder="Sinopse"></textarea>
+		<textarea name="sinopse" class="form-control" rows="3" placeholder="Sinopse"></textarea>
 		
 		
 		<div style="text-align:center;">
-    		<button id="btn_i" type="button" align="center" class="btn btn-lg btn-success" onClick="return validaFormulario()">Cadastrar!</button>    
+    		<button align="center" class="btn btn-lg btn-success">Cadastrar!</button>    
 		</div>
 		
 		</form>
-		</div>
 	</body>
 </html>
