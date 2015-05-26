@@ -20,7 +20,9 @@ import filmator.model.Filme;
 		
 		
 		public void inserir(Filme filme){
-			jdbcTemplate.update("INSERT INTO Filme (nome) VALUES (?)", filme.getNome());
+			jdbcTemplate.update("INSERT INTO Filme (nome,datalancamento,sinopse,caminhoimg,genero)"
+					+ " VALUES (?,?,?,?,?)", filme.getNomeFilme(), filme.getDataLancamento(),filme.getSinopse(),
+					filme.getImg(),filme.getGenero().name());
 		}
 
 
