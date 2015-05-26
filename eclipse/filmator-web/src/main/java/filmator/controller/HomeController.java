@@ -16,7 +16,7 @@ public class HomeController {
 	@Inject
 	FilmeDao dao;
 	
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping(value = "/nomeDoArquivo", method = RequestMethod.GET)
 	public String home(Model model) {
 		model.addAttribute("filmes",  dao.buscaTodosFilmes());
 
@@ -32,7 +32,7 @@ public class HomeController {
 		
 		dao.inserir(filme);
 		
-		  return "nomeDoArquivo"; 
+		  return "redirect:/"; 
 
 	}
 }
