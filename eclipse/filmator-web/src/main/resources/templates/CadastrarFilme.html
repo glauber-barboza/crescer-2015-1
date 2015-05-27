@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8">
+	
+
+		 {{> scripts}}
+
+	</head>
+	<body>
+	
+		
+		
+			
+			
+		<br><br>		
+		 <!-- form cadastro -->
+		<div class="borda">
+		
+		<div style="text-align:center;">
+			<h1 >Cadastro de filmes<h1>
+		</div>
+		<form class="form-horizontal" action="/salvar" method="POST">
+		
+		<input name="nomeFilme" type="text" class="form-control" placeholder="Nome do Filme">
+		
+		<select class="form-control" name="genero">
+		
+									{{#generos}}														
+			<option  value="{{name}}">{{descricao}}</option>
+									{{/generos}}
+		</select>  
+			<input class="form-control" placeholder="Data de lançamento" name="dataLancamento">
+
+		<input name="img" type="text" class="form-control" placeholder="URL da capa do filme">
+		
+		<textarea name="sinopse" class="form-control" rows="3" placeholder="Sinopse"></textarea>
+		
+		
+		<div style="text-align:center;">
+    		<button align="center" class="btn btn-lg btn-success">Cadastrar!</button>    
+		</div>
+		
+		</form>
+		
+		
+		<div id="wrapper" class="active">
+      
+	  
+	
+	
+	 <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img src="/img/logo.png" alt="">
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+					<li>
+                        <a href="/Home" >Home</a>
+                    </li>
+                    <li>
+                        <a href="/CadastrarFilmes">Cadastro De Filme</a>
+                    </li>
+                    <li>
+                        <a href="#">Filmes</a>
+                    </li>
+                    <li>
+                        <a href="#">teste</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+	
+	
+      
+    </div>
+		
+		
+		
+		
+	</body>
+</html>

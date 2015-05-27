@@ -1,0 +1,32 @@
+		.form-control{
+				width:350px;
+				margin:auto;
+				margin-top: 30px;
+				margin-bottom: 15px;
+			}
+		
+			.borda{
+				 width:450px;
+				 margin:30px;
+			}
+			
+			.centraliza{
+				margin:auto;
+			}
+			
+			#btn_i{
+			    width:125px;
+			    margin-left:auto;
+			    margin-right:auto;
+			}
+
+			body{
+				background-image: url("/img/fundo.jpg");
+				background-size: cover; 
+				background-attachment:  fixed;
+				background-position: center;
+				
+			
+			}
+			.menu { float: left; width: 30%; }
+			

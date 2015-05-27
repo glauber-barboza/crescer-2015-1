@@ -16,14 +16,30 @@ public class HomeController {
 	@Inject
 	FilmeDao dao;
 	
-	@RequestMapping(value = "/nomeDoArquivo", method = RequestMethod.GET)
+	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Model model) {
+		model.addAttribute("filmes",  dao.buscaTodosFilmes());
+
+		
+	
+
+		return "Home";
+	}
+	
+	@RequestMapping(value = "/Home", method = RequestMethod.GET)
+	public String clickHome(Model model) {
 		model.addAttribute("filmes",  dao.buscaTodosFilmes());
 
 		 model.addAttribute("generos", Genero.values()); 
 	
 
-		return "nomeDoArquivo";
+		return "Home";
+	}
+	@RequestMapping(value = "/cadastrarFilme", method = RequestMethod.GET)
+	public String cadastrarFilme(Model model) {
+	
+		 model.addAttribute("generos", Genero.values()); 
+		return "cadastrarFilme";
 	}
 	
 	@RequestMapping(value = "/salvar", method = RequestMethod.POST)
