@@ -1,0 +1,41 @@
+package filmator.dao;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.List;
+
+import javax.inject.Inject;
+
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Component;
+
+
+
+import org.springframework.stereotype.Controller;
+
+import filmator.model.Users;
+
+@Component
+public class UserDao {
+
+	@Inject
+	private JdbcTemplate jdbcTemplate;
+	
+	public void inserir(Users user){
+		
+		jdbcTemplate.update("INSERT INTO users nome,senha,tipoUser"
+				+ " VALUES (?,?,?)", user.getLogin(),user.getSenha(),user.getTipoUser());
+	}
+	public List<Users> verificaUsuario(String logim,String senha) {
+		return jdbcTemplate.query("SELECT nome,senha,tipoUser FROM users where nome=? and senha=?",
+						(ResultSet rs, int rowNum) -> {
+							Users usr = new Users(rs
+									.getString("nome"), rs
+									.getString("senha"),rs
+									.getInt("tipoUser"));
+							return usr;
+						}, logim, senha);
+		
+   }
+}
