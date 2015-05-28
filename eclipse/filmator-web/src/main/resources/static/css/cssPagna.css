@@ -6,8 +6,8 @@
 			}
 		
 			.borda{
-				 width:450px;
-				 margin:30px;
+				 width:auto;
+				 margin:auto;
 			}
 			
 			.centraliza{
@@ -21,12 +21,44 @@
 			}
 
 			body{
-				background-image: url("/img/fundo.jpg");
+				background-color: #00CED1;
 				background-size: cover; 
 				background-attachment:  fixed;
 				background-position: center;
 				
 			
 			}
-			.menu { float: left; width: 30%; }
+			.menu { 
+			float: left; 
+			width: 30%; 
+			}
+			
+			.corBranco{
+			color:white;
+			}
+			
+			.corPreto{
+			color:black;
+			}
+			
+			.caixinha{
+			height: auto;
+			width: auto;
+			background: #5cb85c;
+			}
+			.logimSenha{
+			margin-top: 15px;
+			width: 120px;
+			height: 20px;			
+			}
+			.dividirEsq{
+			margin-left: 380px;
+			}
+			.auturaLoginSenha{
+			margin-top: 20px;	
+			}
+			.auturaBtnLogin{
+			margin-top: 15px;
+			margin-left:5px;
+			}
 			

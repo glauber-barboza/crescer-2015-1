@@ -9,27 +9,19 @@
 	</head>
 	<body>
 	
-		<div class="TelaCenter">
-		
-		
-		</div>
-		
-		
-		
-		<div class="row-fluid" >
+	
+		<div class="row" >
 			
 				{{#filmes}}
-				<div class="col-sm-3">
-					<div class="thumbnail">
-					  <img src="{{img}}" >
+				<div class="col-xs-3">
+				<div class="caixinha">
+					<h3 class="corBranco">{{nomeFilme}}</h3>
+						<h5 class="corBranco">Genero: {{genero}}</h5>
+				
+					  <img src="{{img}}" width="315px" height="300px">
 					  <div class="caption">
-					  
-						<h3>Nome do Filme: {{nomeFilme}}</h3>
-						<p>Genero: {{genero}}</p>
-						<p>Data de Lançamento: {{dataLancamento}}</p>
-						<p>Sinopse: {{sinopse}}</p>
-						
 					  </div>
+						
 					</div>
 				</div>
 	
