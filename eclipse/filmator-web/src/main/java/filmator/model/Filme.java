@@ -5,6 +5,7 @@ public class Filme {
 	
 	private String nomeFilme, sinopse,img,dataLancamento;
 	private Genero genero;
+	
 	public Filme() {
 		
 	}
