@@ -17,44 +17,42 @@
 			
 		<br><br>		
 		 <!-- form cadastro -->
-		<div class="borda">
-		
-		<div style="text-align:center;">
-			<h1 >Cadastro de filmes<h1>
+	<div class="borda">
+
+		<div style="text-align: center;">
+			<h1>
+				Cadastro de filmes
+				<h1>
 		</div>
 		<form class="form-horizontal" action="/salvar" method="POST">
-			
-			<input name="nomeFilme" type="text" class="form-control" placeholder="Nome do Filme">
-			
-			<select class="form-control" name="genero">
-			
-										{{#generos}}														
-				<option  value="{{name}}">{{descricao}}</option>
-										{{/generos}}
-			</select>  
-				<input class="form-control" placeholder="Data de lançamento" name="dataLancamento">
 
-			<input name="img" type="text" class="form-control" placeholder="URL da capa do filme">
-			
-			<textarea name="sinopse" class="form-control" rows="3" placeholder="Sinopse"></textarea>
-			
-			
-			<div style="text-align:center;">
-				<button align="center" class="btn btn-lg btn-success">Cadastrar!</button>    
+			<input name="nomeFilme" type="text" class="form-control"
+				placeholder="Nome do Filme"> <select class="form-control"
+				name="genero"> {{#generos}}
+				<option value="{{name}}">{{descricao}}</option> {{/generos}}
+			</select> <input class="form-control" placeholder="Data de lançamento"
+				name="dataLancamento"> <input name="img" type="text"
+				class="form-control" placeholder="URL da capa do filme">
+
+			<textarea name="sinopse" class="form-control" rows="3"
+				placeholder="Sinopse"></textarea>
+
+
+			<div style="text-align: center;">
+				<button align="center" class="btn btn-lg btn-success">Cadastrar!</button>
 			</div>
-			
+
 		</form>
-		
-		
-		<div id="wrapper" class="active">
-      
-	  
-			 {{> BarraSuperior}}
-	
-	
-	
-      
-    </div>
+
+
+		<div id="wrapper" class="active">{{> BarraSuperior}}</div>
+
+
+
+
+
+
+	</div>
 		
 		
 		

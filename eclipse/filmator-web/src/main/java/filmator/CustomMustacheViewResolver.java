@@ -29,14 +29,16 @@ public class CustomMustacheViewResolver extends UrlBasedViewResolver {
 	}
 
 	/**
-	 * @param compiler the compiler to set
+	 * @param compiler
+	 *            the compiler to set
 	 */
 	public void setCompiler(Compiler compiler) {
 		this.compiler = compiler;
 	}
 
 	/**
-	 * @param charset the charset to set
+	 * @param charset
+	 *            the charset to set
 	 */
 	public void setCharset(String charset) {
 		this.charset = charset;
@@ -56,9 +58,10 @@ public class CustomMustacheViewResolver extends UrlBasedViewResolver {
 	}
 
 	private Template createTemplate(Resource resource) throws IOException {
-		return this.charset == null ? this.compiler.compile(new InputStreamReader(
-				resource.getInputStream())) : this.compiler
-				.compile(new InputStreamReader(resource.getInputStream(), this.charset));
+		return this.charset == null ? this.compiler
+				.compile(new InputStreamReader(resource.getInputStream()))
+				: this.compiler.compile(new InputStreamReader(resource
+						.getInputStream(), this.charset));
 	}
 
 	private Resource resolveResource(String viewName, Locale locale) {

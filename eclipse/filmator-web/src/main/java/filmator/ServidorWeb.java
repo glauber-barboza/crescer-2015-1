@@ -8,16 +8,15 @@ import org.springframework.boot.autoconfigure.mustache.MustacheProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.Ordered;
 
-
 @SpringBootApplication
 public class ServidorWeb {
-	
-	
+
 	@Inject
 	private MustacheProperties mustache;
 
 	@Bean
-	public CustomMustacheViewResolver viewResolver(com.samskivert.mustache.Mustache.Compiler mustacheCompiler){
+	public CustomMustacheViewResolver viewResolver(
+			com.samskivert.mustache.Mustache.Compiler mustacheCompiler) {
 		CustomMustacheViewResolver resolver = new CustomMustacheViewResolver();
 		resolver.setPrefix(this.mustache.getPrefix());
 		resolver.setSuffix(this.mustache.getSuffix());
@@ -30,7 +29,6 @@ public class ServidorWeb {
 		return resolver;
 	}
 
-	
 	public static void main(String[] args) throws Exception {
 		SpringApplication.run(ServidorWeb.class, args);
 	}

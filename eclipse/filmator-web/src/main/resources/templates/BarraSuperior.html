@@ -19,9 +19,11 @@
 					<li>
                         <a href="/Home" >Home</a>
                     </li>
+                    {{#usuarioAdm}}
                     <li>
                         <a href="/cadastrarFilme">Cadastro De Filme</a>
                     </li>
+                    {{/usuarioAdm}}
                     <li>
                         <a href="#">Filmes</a>
                     </li>
@@ -54,7 +56,7 @@
 					
 					{{#usuarioEstaLogado}}
 					<li>
-						<span class="corBranco usuarioLogado ">{{#nomeUsuario}} {{nomeUsuario}} {{/nomeUsuario}}</span>
+						<span class="corBranco usuarioLogado ">Bem Vindo :{{#nomeUsuario}} {{nomeUsuario}} {{/nomeUsuario}}</span>
 					</li>
 					{{/usuarioEstaLogado}}
                 </ul>

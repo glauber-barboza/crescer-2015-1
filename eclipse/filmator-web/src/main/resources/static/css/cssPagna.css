@@ -44,7 +44,6 @@
 			.caixinha{
 			height: auto;
 			width: auto;
-			background: #5cb85c;
 			}
 			.logimSenha{
 			margin-top: 15px;
@@ -62,7 +61,7 @@
 			margin-left:5px;
 			}
 			.usuarioLogado{
-			margin-left: 500px;
+			margin-left:500px;
 			margin-top: 20px;
 			}
 			
