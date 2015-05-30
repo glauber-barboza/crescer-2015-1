@@ -28,6 +28,7 @@ public class UserController {
 			userRecebido= userdao.verificaUsuario(user.getLogin(),
 					user.getSenha());
 		}
+		
 
 		if (userRecebido.get(0) != null && userRecebido.size() > 0) {
 			model.addAttribute("loginNome", userRecebido.get(0).getLogin());
@@ -37,5 +38,15 @@ public class UserController {
 		} else {
 			return "redirect:/Home";
 		}
+	}
+	
+	@RequestMapping(value = "/cadastrar", method = RequestMethod.POST)
+	public String Cadastrar(Users user, Model model, HttpSession session) {
+
+		if(!user.getLogin().isEmpty() && !user.getSenha().isEmpty()){
+
+			userdao.inserir(user);
+		}
+		return "redirect:/Home";
 	}
 }

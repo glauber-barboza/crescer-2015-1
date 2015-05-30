@@ -28,8 +28,7 @@ public class UserDao {
 	public void inserir(Users user) {
 
 		jdbcTemplate.update("INSERT INTO users nome,senha,tipoUser"
-				+ " VALUES (?,?,?)", user.getLogin(), user.getSenha(),
-				user.getTipoUser());
+				+ " VALUES (?,?,?)", user.getLogin(), user.getSenha(),0);
 	}
 
 	public List<Users> verificaUsuario(String logim, String senha) {

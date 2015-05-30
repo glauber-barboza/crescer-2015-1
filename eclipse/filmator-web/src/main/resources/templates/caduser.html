@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8">
+	
+
+		 {{> scripts}}
+		 
+
+	</head>
+	<body>
+	
+		
+		
+			
+			
+		<br><br>		
+		 <!-- form cadastro -->
+	<div class="borda">
+
+		<div style="text-align: center;">
+			<h1>
+				Cadastro de usuário
+				<h1>
+		</div>
+		<form class="form-horizontal" action="/cadastrar" method="POST">
+
+			<input name="login" type="text" class="form-control" placeholder="Login"> 
+			<input class="form-control" placeholder="Senha" name="login">
+			<input class="form-control" placeholder="Confirmar senha">
+
+			<div style="text-align: center;">
+				<button align="center" class="btn btn-lg btn-success">Cadastrar!</button>
+			</div>
+
+		</form>
+
+
+		<div id="wrapper" class="active">{{> BarraSuperior}}</div>
+
+
+
+
+
+
+	</div>
+		
+		
+		
+		
+	</body>
+</html>
