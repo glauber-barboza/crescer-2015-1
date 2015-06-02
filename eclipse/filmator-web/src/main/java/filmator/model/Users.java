@@ -2,12 +2,26 @@ package filmator.model;
 
 public class Users {
 
-	private String login, senha;
+	private String login, senha,senhaConfirma;
 	private int tipoUser=0, idUser;
 
 	public Users() {
 
 	}
+	
+	
+
+	public String getSenhaConfirma() {
+		return senhaConfirma;
+	}
+
+
+
+	public void setSenhaConfirma(String senhaConfirma) {
+		this.senhaConfirma = senhaConfirma;
+	}
+
+
 
 	public Users(int idUser, String login, String senha, int tipoUser) {
 		this.idUser = idUser;

@@ -34,19 +34,36 @@ public class UserController {
 			model.addAttribute("loginNome", userRecebido.get(0).getLogin());
 			session.setAttribute("usuarioLogado", userRecebido.get(0));
 			model.addAttribute("nomeUsuario", userRecebido.get(0).getLogin());
-			return "redirect:/cadastrarFilme";
+			return "redirect:/Home";
 		} else {
 			return "redirect:/Home";
 		}
 	}
 	
+	@RequestMapping(value = "/CadUser", method = RequestMethod.GET)
+	public String CadUser(Model model, HttpSession session) {
+		Users usuario = (Users) session.getAttribute("usuarioLogado");
+		model.addAttribute("usuarioNaoEstaLogado", usuario == null ? true : false);
+		model.addAttribute("usuarioEstaLogado", usuario != null ? true : false);
+		model.addAttribute("nomeUsuario",usuario == null ? "" : usuario.getLogin());
+		
+		System.out.println("teste");
+		return "CadUser";
+		}
+	
 	@RequestMapping(value = "/cadastrar", method = RequestMethod.POST)
 	public String Cadastrar(Users user, Model model, HttpSession session) {
 
-		if(!user.getLogin().isEmpty() && !user.getSenha().isEmpty()){
-
+		System.out.println(user.getLogin());
+		System.out.println(user.getSenha());
+		System.out.println(user.getSenhaConfirma());
+		if(!user.getLogin().isEmpty() && !user.getSenha().isEmpty() && user.getSenha().equals(user.getSenhaConfirma())){
+			System.out.println("Foi");
 			userdao.inserir(user);
+			return "redirect:/Home";
+		}else {
+			
+			return "redirect:/CadUser";
 		}
-		return "redirect:/Home";
 	}
 }

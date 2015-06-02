@@ -27,7 +27,7 @@ public class UserDao {
 
 	public void inserir(Users user) {
 
-		jdbcTemplate.update("INSERT INTO users nome,senha,tipoUser"
+		jdbcTemplate.update("INSERT INTO users (nome,senha,tipoUser)"
 				+ " VALUES (?,?,?)", user.getLogin(), user.getSenha(),0);
 	}
 
