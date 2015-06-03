@@ -4,13 +4,13 @@ public class Filme {
 
 	private String nomeFilme, sinopse, img, dataLancamento;
 	private Genero genero;
+	private double notaFilme;
+	private int idFilme;
 
-	public Filme() {
 
-	}
-
-	public Filme(String nome, String sinopse, String img,
+	public Filme(int idfilme, String nome, String sinopse, String img,
 			String dataLancamento, Genero genero) {
+		this.idFilme=idfilme;
 		this.nomeFilme = nome;
 		this.sinopse = sinopse;
 		this.img = img;
@@ -18,6 +18,38 @@ public class Filme {
 		this.genero = genero;
 
 	}
+	
+	
+	public Filme() {
+
+	}
+
+	
+	
+	public int getIdFilme() {
+		return idFilme;
+	}
+
+
+
+	public void setIdFilme(int idFilme) {
+		this.idFilme = idFilme;
+	}
+
+
+
+	public double getNotaFilme() {
+		return notaFilme;
+	}
+
+
+
+	public void setNotaFilme(double notaFilme) {
+		this.notaFilme = notaFilme;
+	}
+
+
+
 
 	public String getDataLancamento() {
 		return dataLancamento;

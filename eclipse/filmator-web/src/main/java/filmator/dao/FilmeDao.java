@@ -36,9 +36,10 @@ public class FilmeDao {
 
 	public List<Filme> buscaTodosFilmes() {
 		return jdbcTemplate
-				.query("SELECT nome,datalancamento,sinopse,caminhoimg, genero FROM Filme",
+				.query("SELECT idfilme,nome,datalancamento,sinopse,caminhoimg, genero FROM Filme",
 						(ResultSet rs, int rowNum) -> {
-							Filme filme = new Filme(rs.getString("nome"), rs
+							Filme filme = new Filme(rs.getInt("idfilme"),
+									rs.getString("nome"), rs
 									.getString("sinopse"), rs
 									.getString("caminhoimg"), rs
 									.getString("datalancamento"), Enum.valueOf(

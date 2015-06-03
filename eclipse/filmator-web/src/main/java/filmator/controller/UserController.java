@@ -35,9 +35,9 @@ public class UserController {
 			session.setAttribute("usuarioLogado", userRecebido.get(0));
 			model.addAttribute("nomeUsuario", userRecebido.get(0).getLogin());
 			return "redirect:/Home";
-		} else {
+		} 
 			return "redirect:/Home";
-		}
+		
 	}
 	
 	@RequestMapping(value = "/CadUser", method = RequestMethod.GET)

@@ -8,35 +8,34 @@
 
 	</head>
 	<body>
-	
-	
-		<div class="row" >
-			
-				{{#filmes}}
-				<div class="col-xs-3">
-				<div class="caixinha">
-					<h3 class="corBranco">{{nomeFilme}}</h3>
-						<h5 class="corBranco">Genero: {{genero}}</h5>
-				
-					  <img src="{{img}}" width="298px" height="300px">
-					  <div class="caption">
-					  </div>
-						
-					</div>
-				</div>
-	
-					
-				{{/filmes}}
-			
-		</div>	  
-	
-	
-	 {{> BarraSuperior}}
-	
-      
-    </div>
+
+
+
+
+	<div id="wrapper" class="active">{{> BarraSuperior}}</div>
+
+
+
+	{{#filmes}}
+	<div class="col-xs-6">
+	<form class="form-horizontal" action="/darNota" method="POST">
+		<img src="{{img}}" width="298px" height="300px" class="left">
+		<h6 class="corFundo">{{idFilme}}</h6>
+		<h3 class="corBranco">{{nomeFilme}}</h3>
+		<h5 class="corBranco">Genero: {{genero}}</h5>
+		<h5 class="corBranco">Data De Lançamento: {{dataLancamento}}</h5>
+		<h5 class="corBranco">Sinopse: {{sinopse}}</h5>
 		
-		
+		<div class="rating-stars" data-content="" style="width: 0%;"></div>
+		<input name="notaFilme" class="rating form-control hide" min="0" max="5"
+			step="0.5" data-size="sm" data-symbol="" data-glyphicon="false"
+			data-rating-class="rating-fa">
+				<button  class="left btn btn-small btn-success ">Dar Nota!</button>
+			</form>
+	</div>
+	<form></form>
+
+	{{/filmes}}
 		
 		
 	</body>
