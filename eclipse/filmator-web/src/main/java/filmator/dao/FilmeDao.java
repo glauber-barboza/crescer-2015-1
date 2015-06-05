@@ -21,9 +21,14 @@ public class FilmeDao {
 
 	/*
 	 * create table FILME(idFilme integer not null auto_increment, nome
-	 * varchar(100) not null, datalancamento varchar(50) not null, sinopse
-	 * varchar(50) not null, caminhoimg varchar(200) not null, gênero
+	 * varchar(100) not null, datalancamento varchar(200) not null, sinopse
+	 * varchar(200) not null, caminhoimg varchar(200) not null, genero
 	 * varchar(100) not null);
+	 * 
+	 * 
+	 * create table notaDoFilme(idNota integer not null auto_increment,
+nota integer not null,
+fk_idFilme integer not null);
 	 */
 
 	public void inserir(Filme filme) {
@@ -46,6 +51,10 @@ public class FilmeDao {
 									Genero.class, rs.getString("genero")));
 							return filme;
 						});
+	}
+	public void inserirNota(Filme filme, int id) {
+System.out.println("id: "+filme.getIdFilme()+"nota: "+filme.getNotaFilme()+"id filme: "+ id);
+		jdbcTemplate.update("INSERT INTO NOTADOFILME (nota,fk_idFilme,fk_idUser) VALUES (?,?,?);", filme.getNotaFilme(), filme.getIdFilme(),id);
 	}
 
 }

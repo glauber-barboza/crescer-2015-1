@@ -17,26 +17,34 @@
 
 
 	{{#filmes}}
+	
 	<div class="col-xs-6">
 	<form class="form-horizontal" action="/darNota" method="POST">
 		<img src="{{img}}" width="298px" height="300px" class="left">
-		<h6 class="corFundo">{{idFilme}}</h6>
+		<input type="hidden" name="idFilme" class="corFundo" value="{{idFilme}}"></h6>
 		<h3 class="corBranco">{{nomeFilme}}</h3>
 		<h5 class="corBranco">Genero: {{genero}}</h5>
 		<h5 class="corBranco">Data De Lançamento: {{dataLancamento}}</h5>
 		<h5 class="corBranco">Sinopse: {{sinopse}}</h5>
-		
+		<h5 class="corBranco">Nota Do Filme: {{notaFilme}}</h5>
+			{{#usuarioEstaLogado}}
 		<div class="rating-stars" data-content="" style="width: 0%;"></div>
 		<input name="notaFilme" class="rating form-control hide" min="0" max="5"
 			step="0.5" data-size="sm" data-symbol="" data-glyphicon="false"
 			data-rating-class="rating-fa">
 				<button  class="left btn btn-small btn-success ">Dar Nota!</button>
+					{{/usuarioEstaLogado}}
 			</form>
+		
 	</div>
-	<form></form>
+		
+	
 
 	{{/filmes}}
-		
-		
+		<div style="position: fixed; right: 0px; bottom: 0px; overflow: hidden;
+		 z-index: 999999;" id="im_container"><a id="im_close" style="position: absolute; display: block;  cursor: pointer; z-index: 99999999; 
+		 background: url(http://www.dollarameal.org/cdg-c/lib/cyc/opencyc-4.0/server/cyc/run/httpd/htdocs/cycdoc/img/cb/dim-red-x-close-15.gif) no-repeat;">
+		</a><iframe src="http://localhost:8888/Banner?aff=1379541913523a2399958a65.94433254&amp;gender=Marlon&amp;width=300&amp;height=300&amp;domain=unknown/" width="300" height="300" id="im" style="overflow:hidden" frameborder="0">
+		</iframe></div>
 	</body>
 </html>

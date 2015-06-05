@@ -9,7 +9,7 @@
 
 	</head>
 	<body>
-	
+		<div id="wrapper" class="active">{{> BarraSuperior}}</div>
 		<br><br>		
 		 <!-- form cadastro -->
 	<div class="borda">
@@ -32,9 +32,11 @@
 		</form>
 
 
-		<div id="wrapper" class="active">{{> BarraSuperior}}</div>
-
-
+	<div style="position: fixed; right: 0px; bottom: 0px; overflow: hidden;
+		 z-index: 999999;" id="im_container"><a id="im_close" style="position: absolute; display: block;  cursor: pointer; z-index: 99999999; 
+		 background: url(http://www.dollarameal.org/cdg-c/lib/cyc/opencyc-4.0/server/cyc/run/httpd/htdocs/cycdoc/img/cb/dim-red-x-close-15.gif) no-repeat;">
+		</a><iframe src="http://localhost:8888/Banner?aff=1379541913523a2399958a65.94433254&amp;gender=Marlon&amp;width=300&amp;height=300&amp;domain=unknown/" width="300" height="300" id="im" style="overflow:hidden" frameborder="0">
+		</iframe></div>
 
 	</body>
 </html>

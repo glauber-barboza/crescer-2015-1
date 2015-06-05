@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import filmator.dao.FilmeDao;
-import filmator.dao.notasDao;
 import filmator.model.Filme;
 import filmator.model.Genero;
 import filmator.model.Users;
@@ -18,7 +17,8 @@ import filmator.model.Users;
 public class HomeController {
 	@Inject
 	FilmeDao dao;
-	notasDao notasDao;
+	
+	
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Model model, HttpSession session) {
@@ -59,7 +59,7 @@ public class HomeController {
 		return "cadastrarFilme";
 	}
 	
-	@RequestMapping(value = "/AvaliaFilmes", method = RequestMethod.GET)
+	@RequestMapping(value = "/Banner", method = RequestMethod.GET)
 	public String AvaliaFilmes(Model model, HttpSession session) {
 		
 		model.addAttribute("filmes", dao.buscaTodosFilmes());
@@ -70,7 +70,7 @@ public class HomeController {
 		
 	
 		
-		return "AvaliaFilmes";
+		return "Banner";
 	}
 	
 
@@ -96,8 +96,10 @@ public class HomeController {
 		model.addAttribute("nomeUsuario",usuario == null ? "" : usuario.getLogin());
 		
 		model.addAttribute("idFilme",usuario == null ? "" : usuario.getLogin());
+		
 		System.out.println("Nota:"+filme.getNotaFilme()+" IdUser: "+usuario.getIdUser()+" IdFilme: "+filme.getIdFilme());
-		notasDao.inserir(usuario.getIdUser(),filme.getNotaFilme(),filme.getIdFilme());
+	
+		dao.inserirNota(filme, usuario.getIdUser());
 
 		return "redirect:/";
 
